@@ -1,0 +1,113 @@
+.hero6-header19 {
+  height: 641px;
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-unit);
+  padding-right: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: center;
+}
+.hero6-max-width {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+.hero6-hero-image {
+  width: 542px;
+  height: 537px;
+  max-width: 550px;
+  margin-left: var(--dl-space-space-fourunits);
+  margin-right: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-fourunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-twounits);
+  animation-name: fadeInDown;
+  animation-delay: 0s;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+.hero6-column {
+  gap: var(--dl-space-space-oneandhalfunits);
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.hero6-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  margin-left: var(--dl-space-space-threeunits);
+  padding-left: var(--dl-space-space-fourunits);
+  flex-direction: column;
+  justify-content: center;
+}
+.hero6-actions {
+  gap: var(--dl-space-space-unit);
+  display: flex;
+  align-items: flex-start;
+}
+.hero6-button2 {
+  text-decoration: none;
+}
+.hero6-fragment1 {
+  display: contents;
+}
+.hero6-text14 {
+  display: inline-block;
+}
+.hero6-fragment2 {
+  display: contents;
+}
+.hero6-text19 {
+  display: inline-block;
+}
+.hero6-fragment3 {
+  display: contents;
+}
+.hero6-text20 {
+  display: inline-block;
+}
+.hero6-fragment4 {
+  display: contents;
+}
+.hero6-text21 {
+  display: inline-block;
+}
+.hero6root-class-name {
+  align-self: center;
+  margin-left: var(--dl-space-space-unit);
+}
+@media(max-width: 991px) {
+  .hero6-max-width {
+    flex-direction: column;
+  }
+  .hero6-hero-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media(max-width: 479px) {
+  .hero6-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .hero6-button1 {
+    width: 100%;
+  }
+  .hero6-button2 {
+    width: 100%;
+  }
+  .hero6-text14 {
+    text-align: center;
+  }
+  .hero6-text15 {
+    text-align: center;
+  }
+  .hero6-text19 {
+    text-align: center;
+  }
+}
