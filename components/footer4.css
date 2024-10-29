@@ -59,6 +59,10 @@
   display: flex;
   align-items: flex-start;
 }
+.footer4-text11 {
+  fill: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
+}
 .footer4-fragment1 {
   display: contents;
 }
@@ -99,8 +103,6 @@
   display: contents;
 }
 .footer4-text20 {
-  fill: var(--dl-color-theme-neutral-dark);
-  color: var(--dl-color-theme-neutral-dark);
   display: inline-block;
 }
 .footer4-fragment8 {

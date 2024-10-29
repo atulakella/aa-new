@@ -14,6 +14,12 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.timeline5-text10 {
+  text-align: center;
+}
+.timeline5-text11 {
+  text-align: left;
+}
 .timeline5-container12 {
   gap: var(--dl-space-space-unit);
   flex: 0 0 auto;
@@ -77,6 +83,9 @@
   border-width: 1px;
   flex-direction: column;
 }
+.timeline5-text15 {
+  text-align: left;
+}
 .timeline5-container17 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -132,6 +141,9 @@
   border-color: var(--dl-color-theme-neutral-dark);
   border-width: 1px;
   flex-direction: column;
+}
+.timeline5-text20 {
+  text-align: left;
 }
 .timeline5-container22 {
   gap: var(--dl-space-space-unit);
@@ -189,6 +201,9 @@
   border-width: 1px;
   flex-direction: column;
 }
+.timeline5-text25 {
+  text-align: left;
+}
 .timeline5-container27 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -245,6 +260,9 @@
   border-width: 1px;
   flex-direction: column;
 }
+.timeline5-text30 {
+  text-align: left;
+}
 .timeline5-container32 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -256,7 +274,6 @@
 }
 .timeline5-text34 {
   display: inline-block;
-  text-align: left;
 }
 .timeline5-fragment11 {
   display: contents;
@@ -311,21 +328,18 @@
 }
 .timeline5-text43 {
   display: inline-block;
-  text-align: left;
 }
 .timeline5-fragment20 {
   display: contents;
 }
 .timeline5-text44 {
   display: inline-block;
-  text-align: left;
 }
 .timeline5-fragment21 {
   display: contents;
 }
 .timeline5-text45 {
   display: inline-block;
-  text-align: center;
 }
 .timeline5-fragment22 {
   display: contents;
@@ -356,7 +370,6 @@
 }
 .timeline5-text50 {
   display: inline-block;
-  text-align: left;
 }
 .timeline5-fragment27 {
   display: contents;
@@ -387,7 +400,6 @@
 }
 .timeline5-text55 {
   display: inline-block;
-  text-align: left;
 }
 .timeline5-fragment32 {
   display: contents;
@@ -410,20 +422,20 @@
   .timeline5-max-width {
     flex-direction: column;
   }
-  .timeline5-text34 {
-    text-align: left;
-  }
-  .timeline5-text43 {
-    text-align: left;
-  }
-  .timeline5-text44 {
-    text-align: left;
-  }
-  .timeline5-text50 {
+  .timeline5-text11 {
     padding-left: 0px;
     padding-right: 0px;
   }
-  .timeline5-text55 {
+  .timeline5-text15 {
+    text-align: left;
+  }
+  .timeline5-text20 {
+    text-align: left;
+  }
+  .timeline5-text25 {
+    text-align: left;
+  }
+  .timeline5-text30 {
     text-align: left;
   }
 }

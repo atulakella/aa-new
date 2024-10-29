@@ -23,6 +23,9 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.blog-post-header2-text1 {
+  text-align: center;
+}
 .blog-post-header2-image {
   width: 438px;
   height: 552px;
@@ -47,7 +50,6 @@
 }
 .blog-post-header2-text2 {
   display: inline-block;
-  text-align: center;
 }
 @media(max-width: 767px) {
   .blog-post-header2-max-width {

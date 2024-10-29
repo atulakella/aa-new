@@ -24,6 +24,12 @@
   align-items: center;
   flex-direction: column;
 }
+.hero17-text1 {
+  text-align: center;
+}
+.hero17-text2 {
+  text-align: center;
+}
 .hero17-actions {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -148,7 +154,6 @@
 }
 .hero17-text5 {
   display: inline-block;
-  text-align: center;
 }
 .hero17-fragment2 {
   display: contents;
@@ -167,7 +172,6 @@
 }
 .hero17-text8 {
   display: inline-block;
-  text-align: center;
 }
 @media(max-width: 767px) {
   .hero17-content2 {

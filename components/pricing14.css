@@ -24,6 +24,9 @@
   flex-shrink: 0;
   flex-direction: column;
 }
+.pricing14-text100 {
+  text-align: center;
+}
 .pricing14-content {
   gap: var(--dl-space-space-oneandhalfunits);
   width: 100%;
@@ -32,6 +35,12 @@
   align-self: stretch;
   align-items: center;
   flex-direction: column;
+}
+.pricing14-text101 {
+  text-align: center;
+}
+.pricing14-text102 {
+  text-align: center;
 }
 .pricing14-tabs {
   display: flex;
@@ -119,6 +128,13 @@
   align-items: center;
   flex-direction: column;
 }
+.pricing14-text107 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text108 {
+  font-size: 48px;
+}
 .pricing14-list1 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -178,6 +194,13 @@
   align-self: stretch;
   align-items: center;
   flex-direction: column;
+}
+.pricing14-text114 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text115 {
+  font-size: 48px;
 }
 .pricing14-list2 {
   gap: var(--dl-space-space-unit);
@@ -244,6 +267,13 @@
   align-self: stretch;
   align-items: center;
   flex-direction: column;
+}
+.pricing14-text122 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text123 {
+  font-size: 48px;
 }
 .pricing14-list3 {
   gap: var(--dl-space-space-unit);
@@ -332,6 +362,13 @@
   align-items: center;
   flex-direction: column;
 }
+.pricing14-text131 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text132 {
+  font-size: 48px;
+}
 .pricing14-list4 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -391,6 +428,13 @@
   align-self: stretch;
   align-items: center;
   flex-direction: column;
+}
+.pricing14-text138 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text139 {
+  font-size: 48px;
 }
 .pricing14-list5 {
   gap: var(--dl-space-space-unit);
@@ -457,6 +501,13 @@
   align-self: stretch;
   align-items: center;
   flex-direction: column;
+}
+.pricing14-text146 {
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing14-text147 {
+  font-size: 48px;
 }
 .pricing14-list6 {
   gap: var(--dl-space-space-unit);
@@ -538,15 +589,12 @@
 }
 .pricing14-text160 {
   display: inline-block;
-  text-align: center;
 }
 .pricing14-fragment16 {
   display: contents;
 }
 .pricing14-text163 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment17 {
   display: contents;
@@ -559,8 +607,6 @@
 }
 .pricing14-text165 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment19 {
   display: contents;
@@ -585,7 +631,6 @@
 }
 .pricing14-text169 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment23 {
   display: contents;
@@ -598,8 +643,6 @@
 }
 .pricing14-text171 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment25 {
   display: contents;
@@ -612,7 +655,6 @@
 }
 .pricing14-text173 {
   display: inline-block;
-  text-align: center;
 }
 .pricing14-fragment27 {
   display: contents;
@@ -625,7 +667,6 @@
 }
 .pricing14-text175 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment29 {
   display: contents;
@@ -644,7 +685,6 @@
 }
 .pricing14-text178 {
   display: inline-block;
-  text-align: center;
 }
 .pricing14-fragment32 {
   display: contents;
@@ -681,15 +721,12 @@
 }
 .pricing14-text184 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment38 {
   display: contents;
 }
 .pricing14-text185 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment39 {
   display: contents;
@@ -720,7 +757,6 @@
 }
 .pricing14-text190 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment44 {
   display: contents;
@@ -775,8 +811,6 @@
 }
 .pricing14-text199 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment53 {
   display: contents;
@@ -801,14 +835,12 @@
 }
 .pricing14-text203 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment57 {
   display: contents;
 }
 .pricing14-text204 {
   display: inline-block;
-  font-size: 48px;
 }
 .pricing14-fragment58 {
   display: contents;
@@ -821,8 +853,6 @@
 }
 .pricing14-text206 {
   display: inline-block;
-  font-style: normal;
-  font-weight: 600;
 }
 .pricing14-fragment60 {
   display: contents;

@@ -16,6 +16,14 @@
   padding-bottom: var(--dl-space-space-twounits);
   justify-content: space-between;
 }
+.navbar3-text1 {
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Impact";
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 1.85px;
+}
 .navbar3-desktop-menu {
   flex: 1;
   display: flex;
@@ -28,21 +36,6 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-}
-.navbar3-link11 {
-  text-decoration: none;
-}
-.navbar3-link21 {
-  text-decoration: none;
-}
-.navbar3-link31 {
-  text-decoration: none;
-}
-.navbar3-link41 {
-  text-decoration: none;
-}
-.navbar3-link51 {
-  text-decoration: none;
 }
 .navbar3-icon-group1 {
   gap: var(--dl-space-space-twounits);
@@ -167,12 +160,6 @@
 }
 .navbar3-text5 {
   display: inline-block;
-  font-size: 32px;
-  font-style: normal;
-  font-family: "Impact";
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: 1.85px;
 }
 .navbar3-fragment5 {
   display: contents;

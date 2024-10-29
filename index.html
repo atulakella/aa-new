@@ -10,26 +10,6 @@
     <style data-tag="reset-style-sheet">
       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
-    
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background: var(--dl-color-theme-neutral-light);
-
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -58,7 +38,8 @@
     overflow: hidden;       /* Prevents overflow of child elements */
     padding: 40px 0;       /* Vertical padding */
     margin-left: 80px;     /* Left margin */
-    margin-right: 80px;    /* Right margin */
+    margin-right: 80px;
+    margin-top: 260px;    /* Right margin */
     box-sizing: border-box; /* Ensures padding and margin are included in the total width */
 }
 
@@ -179,6 +160,25 @@
           }
       }
   </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://unpkg.com/animate.css@4.1.1/animate.css"
@@ -219,46 +219,36 @@
           <!--Navbar3 component-->
           <header class="navbar3-container">
             <header data-thq="thq-navbar" class="navbar3-navbar-interactive">
-              <span>
+              <span class="navbar3-text1">
                 <fragment class="home-fragment10">
                   <span class="home-text10">ATUL</span>
                 </fragment>
               </span>
               <div data-thq="thq-navbar-nav" class="navbar3-desktop-menu">
                 <nav class="navbar3-links1">
-                  <a href="#Hero6" class="navbar3-link11">
+                  <a href="#Hero6" class="thq-body-small thq-link">
                     <fragment class="home-fragment11">
-                      <span class="home-text11 thq-body-small thq-link">
-                        Home
-                      </span>
+                      <span class="home-text11">Home</span>
                     </fragment>
                   </a>
-                  <a href="#Features25" class="navbar3-link21">
+                  <a href="#Features25" class="thq-body-small thq-link">
                     <fragment class="home-fragment12">
-                      <span class="home-text12 thq-body-small thq-link">
-                        About Me
-                      </span>
+                      <span class="home-text12">About Me</span>
                     </fragment>
                   </a>
-                  <a href="#Steps2" class="navbar3-link31">
+                  <a href="#Steps2" class="thq-body-small thq-link">
                     <fragment class="home-fragment13">
-                      <span class="home-text13 thq-body-small thq-link">
-                        Things I'm proud of
-                      </span>
+                      <span class="home-text13">Things I'm proud of</span>
                     </fragment>
                   </a>
-                  <a href="#projects" class="navbar3-link41">
+                  <a href="#projects" class="thq-body-small thq-link">
                     <fragment class="home-fragment14">
-                      <span class="home-text14 thq-body-small thq-link">
-                        Projects
-                      </span>
+                      <span class="home-text14">Projects</span>
                     </fragment>
                   </a>
-                  <a href="#Contact16" class="navbar3-link51">
+                  <a href="#Contact16" class="thq-body-small thq-link">
                     <fragment class="home-fragment15">
-                      <span class="home-text15 thq-body-small thq-link">
-                        Contact Me!
-                      </span>
+                      <span class="home-text15">Contact Me!</span>
                     </fragment>
                   </a>
                 </nav>
@@ -349,39 +339,29 @@
                     </div>
                   </div>
                   <nav class="navbar3-links2">
-                    <a href="#Hero6">
+                    <a href="#Hero6" class="thq-body-small thq-link">
                       <fragment class="home-fragment11">
-                        <span class="home-text11 thq-body-small thq-link">
-                          Home
-                        </span>
+                        <span class="home-text11">Home</span>
                       </fragment>
                     </a>
-                    <a href="#Features25">
+                    <a href="#Features25" class="thq-body-small thq-link">
                       <fragment class="home-fragment12">
-                        <span class="home-text12 thq-body-small thq-link">
-                          About Me
-                        </span>
+                        <span class="home-text12">About Me</span>
                       </fragment>
                     </a>
-                    <a href="#Steps2">
+                    <a href="#Steps2" class="thq-body-small thq-link">
                       <fragment class="home-fragment13">
-                        <span class="home-text13 thq-body-small thq-link">
-                          Things I'm proud of
-                        </span>
+                        <span class="home-text13">Things I'm proud of</span>
                       </fragment>
                     </a>
-                    <a href="#Testimonial17">
+                    <a href="#Testimonial17" class="thq-body-small thq-link">
                       <fragment class="home-fragment14">
-                        <span class="home-text14 thq-body-small thq-link">
-                          Projects
-                        </span>
+                        <span class="home-text14">Projects</span>
                       </fragment>
                     </a>
-                    <a href="#Contact16">
+                    <a href="#Contact16" class="thq-body-small thq-link">
                       <fragment class="home-fragment15">
-                        <span class="home-text15 thq-body-small thq-link">
-                          Contact Me!
-                        </span>
+                        <span class="home-text15">Contact Me!</span>
                       </fragment>
                     </a>
                   </nav>
@@ -428,29 +408,27 @@
               />
               <div class="hero6-column">
                 <div class="hero6-content">
-                  <h1>
+                  <h1 class="hero6-text10 thq-heading-1">
                     <fragment class="home-fragment19">
-                      <span class="home-text19 thq-heading-1" style="color: black;">
+                      <span class="home-text19">
                         <span>Hey there!</span>
                         <br />
                         <span>I'm Atul Akella&nbsp;</span>
-                    </span>
+                      </span>
                     </fragment>
                   </h1>
-                  <p>
+                  <p class="hero6-text11 thq-body-large">
                     <fragment class="home-fragment18">
-                      <span class="home-text18 thq-body-large">
-                        a maker at heart and an engineer by passion!
+                      <span class="home-text18">
+                        A maker at heart and an engineer by passion
                       </span>
                     </fragment>
                   </p>
                   <div class="hero6-actions">
                     <button class="thq-button-filled hero6-button1">
-                      <span>
+                      <span class="thq-body-small">
                         <fragment class="home-fragment16">
-                          <span class="home-text16 thq-body-small">
-                            View My Work
-                          </span>
+                          <span class="home-text16">View My Work</span>
                         </fragment>
                       </span>
                     </button>
@@ -458,11 +436,9 @@
                       href="mailto:atul.akella@gmail.com?subject=Hey Atul! let's work on something really cool!"
                       class="hero6-button2 thq-button-outline"
                     >
-                      <span>
+                      <span class="thq-body-small">
                         <fragment class="home-fragment17">
-                          <span class="home-text17 thq-body-small">
-                            Get in touch!
-                          </span>
+                          <span class="home-text17">Get in touch!</span>
                         </fragment>
                       </span>
                     </a>
@@ -496,16 +472,14 @@
                       data-thq-animate-on-reveal="true"
                       class="features25-content"
                     >
-                      <h2>
+                      <h2 class="thq-heading-2">
                         <fragment class="home-fragment20">
-                          <span class="home-text23 thq-heading-2">
-                            About Me
-                          </span>
+                          <span class="home-text23">About Me</span>
                         </fragment>
                       </h2>
-                      <span>
+                      <span class="thq-body-small">
                         <fragment class="home-fragment21">
-                          <span class="home-text24 thq-body-small">
+                          <span class="home-text24">
                             <span class="home-text25">
                               Hey there! I’m Atul Akella, an Electronics and
                               Communications Engineering student who loves
@@ -558,7 +532,7 @@
                 >
                   <img
                     alt="Project Management Image Alt Text"
-                    src="public/about-1400w.jpeg"
+                    src="public/about-800w.jpeg"
                     data-thq-animate-on-reveal="true"
                     class="features25-image1 thq-img-ratio-16-9"
                   />
@@ -575,16 +549,14 @@
                 <div class="cta26-accent1-bg">
                   <div class="cta26-container2">
                     <div class="cta26-content">
-                      <span>
+                      <span class="thq-heading-2">
                         <fragment class="home-fragment24">
-                          <span class="home-text36 thq-heading-2">
-                            Ready to collaborate?
-                          </span>
+                          <span class="home-text36">Ready to collaborate?</span>
                         </fragment>
                       </span>
-                      <p>
+                      <p class="thq-body-large">
                         <fragment class="home-fragment23">
-                          <span class="home-text35 thq-body-large">
+                          <span class="home-text35">
                             Let's work together to bring our ideas to life.
                           </span>
                         </fragment>
@@ -625,7 +597,7 @@
                     data-thq-animate-on-reveal="true"
                     class="steps2-section-header"
                   >
-                    <h2 class="thq-heading-2">A few things I'm proud of</h2>
+                    <h2 class="thq-heading-2">A few things I'm proud of...</h2>
                     <p class="thq-body-large">
                       These are a few achievements that make me smile when I
                       look back. Each one reflects my curiosity and passion for
@@ -640,16 +612,16 @@
                 </animate-on-reveal>
                 <div class="steps2-container3">
                   <div class="steps2-container4 thq-card">
-                    <h2>
+                    <h2 class="steps2-text12 thq-heading-2">
                       <fragment class="home-fragment25">
-                        <span class="home-text37 thq-heading-2">
+                        <span class="home-text37">
                           Built my first robot at age 13
                         </span>
                       </fragment>
                     </h2>
-                    <span>
+                    <span class="steps2-text13 thq-body-small">
                       <fragment class="home-fragment29">
-                        <span class="home-text41 thq-body-small">
+                        <span class="home-text41">
                           I started my journey into the world of robotics with
                           sheer curiosity, I made my first Bluetooth-controlled
                           robotic arm boasting three degrees of freedom, which
@@ -660,16 +632,16 @@
                     </span>
                   </div>
                   <div class="steps2-container5 thq-card">
-                    <h2>
+                    <h2 class="steps2-text14 thq-heading-2">
                       <fragment class="home-fragment26">
-                        <span class="home-text38 thq-heading-2">
+                        <span class="home-text38">
                           Developed first portfolio website at age 15
                         </span>
                       </fragment>
                     </h2>
-                    <span>
+                    <span class="steps2-text15 thq-body-small">
                       <fragment class="home-fragment30">
-                        <span class="home-text42 thq-body-small">
+                        <span class="home-text42">
                           I honed my skills further by designing and developing
                           my personal portfolio website. Fueled by the desire to
                           showcase my projects and accomplishments, also network
@@ -682,16 +654,16 @@
                     </span>
                   </div>
                   <div class="steps2-container6 thq-card">
-                    <h2>
+                    <h2 class="steps2-text16 thq-heading-2">
                       <fragment class="home-fragment27">
-                        <span class="home-text39 thq-heading-2">
+                        <span class="home-text39">
                           Represented school at IIT Kharagpur at 14
                         </span>
                       </fragment>
                     </h2>
-                    <span>
+                    <span class="steps2-text17 thq-body-small">
                       <fragment class="home-fragment31">
-                        <span class="home-text43 thq-body-small">
+                        <span class="home-text43">
                           I represented my school at the prestigious
                           IIT-Kharagpur. Leading my team to the finals of the
                           pan Asia Young Innovator’s Program (YIP 2019), hosted
@@ -704,16 +676,16 @@
                     </span>
                   </div>
                   <div class="steps2-container7 thq-card">
-                    <h2>
+                    <h2 class="steps2-text18 thq-heading-2">
                       <fragment class="home-fragment28">
-                        <span class="home-text40 thq-heading-2">
+                        <span class="home-text40">
                           Started professional journey at 18
                         </span>
                       </fragment>
                     </h2>
-                    <span>
+                    <span class="steps2-text19 thq-body-small">
                       <fragment class="home-fragment32">
-                        <span class="home-text44 thq-body-small">
+                        <span class="home-text44">
                           I began my professional journey as a Machine Learning
                           Solutions Engineer at ShrimpIQ, a startup focusing on
                           real-time innovations to revolutinize the aquaculture
@@ -725,15 +697,16 @@
                     </span>
                   </div>
                   <div class="steps2-container6 thq-card">
-                    <h2>
+                    <h2 class="steps2-text16 thq-heading-2">
                       <fragment class="home-fragment27">
-                        <span class="home-text39 thq-heading-2">
-Won three hackathons as a college freshman                        </span>
+                        <span class="home-text39">
+                          Won three hackathons as a college freshman
+                        </span>
                       </fragment>
                     </h2>
-                    <span>
+                    <span class="steps2-text17 thq-body-small">
                       <fragment class="home-fragment31">
-                        <span class="home-text43 thq-body-small">
+                        <span class="home-text43">
                           As a college freshman, I proudly won three hackathons, one of which was held at IIT Roorkee, showcasing my ability to think creatively and tackle real-world challenges in a competitive environment.
                         </span>
                       </fragment>
@@ -744,6 +717,7 @@ Won three hackathons as a college freshman                        </span>
             </div>
           </div>
         </steps2-wrapper>
+
         <div class="ProjectContainer" id="projects">
           <h2 class="thq-heading-2">Projects</h2>
           <div class="projects-wrapper">
@@ -811,7 +785,6 @@ Won three hackathons as a college freshman                        </span>
           </div>
       </div>
 
-
         <contact16-wrapper
           class="contact16-wrapper"
           rootclassname="contact16undefined"
@@ -821,22 +794,24 @@ Won three hackathons as a college freshman                        </span>
             id="Contact16"
             class="contact16-contact20 thq-section-padding contact16root-class-name"
           >
-            <div class="contact16-content">
-              <h2>
-                <fragment class="home-fragment48">
-                  <span class="home-text60 thq-heading-2">Contact me</span>
-                </fragment>
-              </h2>
-              <p>
-                <fragment class="home-fragment47">
-                  <span class="home-text59 thq-body-large">
+            <h2 class="contact16-text1 thq-heading-2">
+              <fragment class="home-fragment34">
+                <span class="home-text49">Contact me</span>
+              </fragment>
+            </h2>
+            <div class="contact16-content"></div>
+            <p class="contact16-text2 thq-body-large">
+              <fragment class="home-fragment33">
+                <span class="home-text45">
+                  <span>
                     Let's be honest, your inbox is probably pretty boring. Spice
-                    it up with a message from me.&nbsp;You won't regret it
-                    (probably).
+                    it up with a message from me.
                   </span>
-                </fragment>
-              </p>
-            </div>
+                  <br />
+                  <span>You won't regret it (probably).</span>
+                </span>
+              </fragment>
+            </p>
             <div class="contact16-container">
               <a
                 href="mailto:atul.akella@gmail.com?subject=Hey Atul!"
@@ -913,48 +888,6 @@ Won three hackathons as a college freshman                        </span>
         </contact16-wrapper>
       </div>
     </div>
-    <script>
-      const wrapper = document.querySelector('.projects-wrapper');
-      const projects = document.querySelectorAll('.project');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      let scrollAmount = 0;
-      const step = 330; // Adjust based on project width + margin
-
-      function checkButtons() {
-          prevBtn.disabled = scrollAmount <= 0;
-          nextBtn.disabled = scrollAmount >= wrapper.scrollWidth - wrapper.clientWidth;
-      }
-
-      prevBtn.addEventListener('click', () => {
-          scrollAmount -= step;
-          if (scrollAmount < 0) scrollAmount = 0;
-          wrapper.scrollTo({
-              left: scrollAmount,
-              behavior: 'smooth'
-          });
-          checkButtons();
-      });
-
-      nextBtn.addEventListener('click', () => {
-          scrollAmount += step;
-          if (scrollAmount > wrapper.scrollWidth - wrapper.clientWidth) {
-              scrollAmount = wrapper.scrollWidth - wrapper.clientWidth;
-          }
-          wrapper.scrollTo({
-              left: scrollAmount,
-              behavior: 'smooth'
-          });
-          checkButtons();
-      });
-
-      wrapper.addEventListener('scroll', () => {
-          scrollAmount = wrapper.scrollLeft;
-          checkButtons();
-      });
-
-      checkButtons();
-  </script>
     <script
       defer=""
       src="https://unpkg.com/@teleporthq/react-components/dist/animate-on-reveal.umd.js"

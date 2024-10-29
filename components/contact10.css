@@ -35,6 +35,9 @@
 .contact10-image1 {
   object-fit: cover;
 }
+.contact10-text12 {
+  text-align: center;
+}
 .contact10-container3 {
   flex: 0 0 auto;
   width: 100%;
@@ -52,6 +55,9 @@
 }
 .contact10-image2 {
   object-fit: cover;
+}
+.contact10-text14 {
+  text-align: center;
 }
 .contact10-container5 {
   flex: 0 0 auto;
@@ -90,14 +96,12 @@
 }
 .contact10-text20 {
   display: inline-block;
-  text-align: center;
 }
 .contact10-fragment6 {
   display: contents;
 }
 .contact10-text21 {
   display: inline-block;
-  text-align: center;
 }
 @media(max-width: 991px) {
   .contact10-content1 {
