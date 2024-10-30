@@ -1,900 +1,739 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atul Akella</title>
-    <meta property="og:title" content="Atul Akella" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+        
+    </script>
+    
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-      :root {
-          --primary-color: #2c3e50;
-          --primary-light: #ebf5fb;
-          --text-color: #2c3e50;
-          --background-color: #ffffff;
-      }
-
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: 'Poppins', sans-serif;
-          background-color: var(--background-color);
-          color: var(--text-color);
-          line-height: 1.6;
-      }
-
-      .ProjectContainer {
-    max-width: 88.5%;        /* Keeps the container from exceeding the width of its parent */
-    overflow: hidden;       /* Prevents overflow of child elements */
-    padding: 40px 0;       /* Vertical padding */
-    margin-left: 80px;     /* Left margin */
-    margin-right: 80px;
-    margin-top: 260px;    /* Right margin */
-    box-sizing: border-box; /* Ensures padding and margin are included in the total width */
-}
-
-      h1 {
-          text-align: center;
-          font-size: 2.5em;
-          margin-bottom: 40px;
-          color: var(--primary-color);
-      }
-
-      .projects-wrapper {
-          display: flex;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          scroll-behavior: smooth;
-          -webkit-overflow-scrolling: touch;
-          padding: 20px;
-      }
-
-      .projects-wrapper::-webkit-scrollbar {
-          width: 10px;
-          height: 10px;
-      }
-
-      .projects-wrapper::-webkit-scrollbar-thumb {
-          background: var(--primary-color);
-          border-radius: 10px;
-      }
-
-      .projects-wrapper::-webkit-scrollbar-track {
-          background: var(--primary-light);
-      }
-
-      .project {
-          flex: 0 0 auto;
-          width: 300px;
-          margin-right: 30px;
-          scroll-snap-align: start;
-          background-color: var(--background-color);
-          border-radius: 15px;
-          overflow: hidden;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .project-image {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-      }
-
-      .project-info {
-          padding: 20px;
-      }
-
-      .project-title {
-          font-size: 1.4em;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: var(--primary-color);
-      }
-
-      .project-description {
-          font-size: 0.9em;
-          color: var(--text-color);
-          margin-bottom: 20px;
-      }
-
-      .learn-more-btn {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: var(--primary-color);
-          color: white;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-      }
-
-      .learn-more-btn:hover {
-          background-color: #2980b9;
-      }
-
-      .navigation {
-          display: flex;
-          justify-content: center;
-          margin-top: 30px;
-      }
-
-      .nav-button {
-          background-color: var(--primary-color);
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          margin: 0 10px;
-          font-size: 16px;
-          cursor: pointer;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-      }
-
-      .nav-button:hover {
-          background-color: #2980b9;
-      }
-
-      .nav-button:disabled {
-          background-color: #bdc3c7;
-          cursor: not-allowed;
-      }
-
-      @media (max-width: 768px) {
-          .project {
-              width: 250px;
-          }
-      }
-  </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background: var(--dl-color-theme-neutral-light);
-
-        fill: var(--dl-color-theme-neutral-dark);
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  
+        :root {
+            --primary-color: #2c3e50;
+            --primary-light: #ebf5fb;
+            --text-color: #2c3e50;
+            --background-color: #ffffff;
+        }
+  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+  
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+  
+        .ProjectContainer {
+      max-width: 88.5%;        /* Keeps the container from exceeding the width of its parent */
+      overflow: hidden;       /* Prevents overflow of child elements */
+      padding: 40px 0;       /* Vertical padding */
+      margin-left: 80px;     /* Left margin */
+      margin-right: 80px;    /* Right margin */
+      box-sizing: border-box; /* Ensures padding and margin are included in the total width */
+  }
+  
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: 1c221b;
+        }
+  
+        .projects-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 20px;
+        }
+  
+        .projects-wrapper::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+  
+        .projects-wrapper::-webkit-scrollbar-thumb {
+            background: #1c221b;
+            border-radius: 10px;
+        }
+  
+        .projects-wrapper::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+  
+        .project {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 30px;
+            scroll-snap-align: start;
+            background-color: #e2e2c0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+  
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+  
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+  
+        .project-info {
+            padding: 20px;
+        }
+  
+        .project-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1c221b;
+        }
+  
+        .project-description {
+            font-size: 0.9em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+  
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1c221b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+  
+        .learn-more-btn:hover {
+            background-color: #e2e2c0;
+        }
+  
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+  
+        .nav-button {
+            text-align: center;
+            background-color: #1c221b;
+            color: white;
+            border: none;
+            padding: 1px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+  
+        .nav-button:hover {
+            background-color: #e2e2c0;
+        }
+  
+        .nav-button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+  
+        @media (max-width: 768px) {
+            .project {
+                width: 250px;
+            }
+        }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="shortcut icon"
-      href="public/cool-dude-with-shades-earphones-and-jacket.png"
-      type="icon/png"
-      sizes="32x32"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
 
-      <div class="home-container">
-        <navbar3-wrapper class="navbar3-wrapper">
-          <!--Navbar3 component-->
-          <header class="navbar3-container">
-            <header data-thq="thq-navbar" class="navbar3-navbar-interactive">
-              <span class="navbar3-text1">
-                <fragment class="home-fragment10">
-                  <span class="home-text10">ATUL</span>
-                </fragment>
-              </span>
-              <div data-thq="thq-navbar-nav" class="navbar3-desktop-menu">
-                <nav class="navbar3-links1">
-                  <a href="#Hero6" class="thq-body-small thq-link">
-                    <fragment class="home-fragment11">
-                      <span class="home-text11">Home</span>
-                    </fragment>
-                  </a>
-                  <a href="#Features25" class="thq-body-small thq-link">
-                    <fragment class="home-fragment12">
-                      <span class="home-text12">About Me</span>
-                    </fragment>
-                  </a>
-                  <a href="#Steps2" class="thq-body-small thq-link">
-                    <fragment class="home-fragment13">
-                      <span class="home-text13">Things I'm proud of</span>
-                    </fragment>
-                  </a>
-                  <a href="#projects" class="thq-body-small thq-link">
-                    <fragment class="home-fragment14">
-                      <span class="home-text14">Projects</span>
-                    </fragment>
-                  </a>
-                  <a href="#Contact16" class="thq-body-small thq-link">
-                    <fragment class="home-fragment15">
-                      <span class="home-text15">Contact Me!</span>
-                    </fragment>
-                  </a>
-                </nav>
-                <div class="navbar3-icon-group1">
-                  <a
-                    href="https://github.com/atulakella"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="navbar3-link6"
-                  >
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="navbar3-icon10 thq-icon-x-small"
-                    >
-                      <path
-                        d="M296.571 685.714v0c1.143-1.714 0.571-5.143-1.714-7.429-2.857-2.286-6.286-2.857-8-1.143-1.143 1.714-0.571 5.143 1.714 7.429 2.857 2.286 6.286 2.857 8 1.143zM280.571 662.286c-1.714-2.286-4.571-3.429-6.857-2.286-1.714 1.143-1.714 4.571 0 6.857 2.286 2.857 5.143 4 6.857 2.857v0c1.714-1.143 1.714-4.571 0-7.429zM257.143 639.429v0c0.571-1.143-0.571-3.429-2.857-4.571-1.714-0.571-4-0.571-4.571 1.143-1.143 1.714 0 3.429 2.286 4.571 2.286 0.571 4.571 0.571 5.143-1.143zM269.143 652.571v0c1.143-1.143 1.143-4-1.143-5.714-1.714-2.286-4.571-2.857-5.714-1.714-1.714 1.714-1.143 4 0.571 6.286 1.714 1.714 4.571 2.857 6.286 1.143zM318.286 695.429v0c0.571-2.286-1.714-5.143-5.143-6.286s-6.286 0-7.429 2.286c-0.571 2.286 1.714 5.143 5.143 6.286s6.286 0 7.429-2.286zM342.286 697.143v0c0-2.286-2.857-4.571-6.857-4.571-3.429 0-5.714 2.286-5.714 4.571s2.857 4.571 6.286 4.571 6.286-2.286 6.286-4.571zM364.571 693.143v0c-0.571-2.286-4-3.429-7.429-2.857s-5.714 2.857-5.143 5.143 3.429 4 6.857 3.429 5.714-3.429 5.714-5.714zM731.429 512c0-161.714-130.857-292.571-292.571-292.571s-292.571 130.857-292.571 292.571c0 129.143 84 238.857 200 277.714 14.857 2.857 20-6.286 20-14.286 0-6.857 0-29.714-0.571-54.286 0 0-81.143 17.714-98.286-34.857 0 0-13.143-33.714-32.571-42.286 0 0-26.286-18.286 2.286-18.286 0 0 28.571 2.286 44.571 30.286 25.714 45.143 68.571 32 85.143 24.571 2.857-18.857 10.286-32 18.857-39.429-65.143-7.429-133.714-32.571-133.714-144.571 0-32 11.429-57.714 30.286-78.286-2.857-7.429-13.143-37.143 2.857-77.714 24.571-7.429 80.571 30.286 80.571 30.286 23.429-6.857 48-9.714 73.143-9.714s49.714 2.857 73.143 9.714c0 0 56-37.714 80.571-30.286 16 40.571 5.714 70.286 2.857 77.714 18.857 20.571 30.286 46.286 30.286 78.286 0 112.571-68.571 137.143-133.714 144.571 10.286 9.143 20 26.857 20 54.286 0 38.857-0.571 70.286-0.571 80 0 8 5.143 17.143 20 14.286 116-38.857 200-148.571 200-277.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://x.com/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="navbar3-link7"
-                  >
-                    <svg
-                      viewBox="0 0 950.8571428571428 1024"
-                      class="navbar3-icon12 thq-icon-x-small"
-                    >
-                      <path
-                        d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/atulakella/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="navbar3-link8"
-                  >
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="navbar3-icon14 thq-icon-x-small"
-                    >
-                      <path
-                        d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/_atulll68_/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="navbar3-link9"
-                  >
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="navbar3-icon16 thq-icon-x-small"
-                    >
-                      <path
-                        d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div data-thq="thq-burger-menu" class="navbar3-burger-menu">
-                <svg viewBox="0 0 1024 1024" class="navbar3-icon18">
-                  <path
-                    d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                  ></path>
-                </svg>
-              </div>
-              <div data-thq="thq-mobile-menu" class="navbar3-mobile-menu">
-                <div class="navbar3-nav">
-                  <div class="navbar3-top">
-                    <img
-                      alt="Portfolio Logo"
-                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
-                      class="navbar3-logo"
-                    />
-                    <div data-thq="thq-close-menu" class="navbar3-close-menu">
-                      <svg viewBox="0 0 1024 1024" class="navbar3-icon20">
-                        <path
-                          d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                        ></path>
-                      </svg>
+<style>
+    .achievement-timeline {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0; /* Adjusts top and bottom padding */
+        margin: 0 auto; /* Centers horizontally */
+        width: 100%; /* Ensure it takes full width for alignment purposes */
+    }
+    .achievement-timeline body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #181e18, #232b22);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .achievement-timeline .container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+
+    .achievement-timeline h1 {
+        text-align: center;
+        color: #f5f5dc;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cards {
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .card {
+        background-color: #1c221b;
+        color: white; 
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        width: 300px;
+        flex-shrink: 0;
+    }
+
+    .card h2 {
+        color: #e2e2c0;
+        font-size: 1.4em;
+        margin-top: 0;
+    }
+
+    .card p {
+        color: #ffffff;
+        font-size: 0.9em;
+        margin-bottom: 0;
+    }
+
+    .timeline {
+        position: relative;
+        height: 4px;
+        background-color: #e5e7eb;
+        margin-top: 2rem;
+    }
+
+    .timeline-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #212820;
+        transition: width 0.3s ease;
+    }
+
+    .timeline-markers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+    }
+
+    .timeline-marker {
+        width: 12px;
+        height: 12px;
+        background-color: #212820;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .timeline-marker:hover {
+        transform: scale(1.8);
+    }
+
+    .timeline-label {
+        font-size: 1.5rem;
+        color: #181d17;
+        text-align: center;
+        margin-top: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            width: 250px;
+        }
+    }
+</style>
+</head>
+
+
+<body id="top">
+
+    
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+            <div class="row s-header__inner">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="index.html">
+                            <img src="images/logo.svg" alt="Homepage">
+                        </a>
                     </div>
-                  </div>
-                  <nav class="navbar3-links2">
-                    <a href="#Hero6" class="thq-body-small thq-link">
-                      <fragment class="home-fragment11">
-                        <span class="home-text11">Home</span>
-                      </fragment>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">    
+                    <ul class="s-header__menu-links">
+                        <li class="current"><a class="smoothscroll" href="#intro">Home</a></li>
+                        <li><a class="smoothscroll" href="#about">About</a></li>
+                        <li><a class="smoothscroll" href="#projects">Projects</a></li>
+                        <li><a class="smoothscroll" href="#Things">Things I'm proud of</a></li>
+                        <li><a class="smoothscroll" href="#footer">Contact Me</a></li>
+                    </ul> <!-- s-header__menu-links -->    
+                </nav> <!-- end s-header__nav -->
+
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
+
+
+        <!-- # intro
+        ================================================== -->
+        <section id="intro" class="s-intro target-section">
+
+            <div class="row s-intro__content width-sixteen-col">
+                <div class="column lg-12 s-intro__content-inner grid-block grid-16">
+                    
+                    <div class="s-intro__content-text">
+
+                        <div class="s-intro__content-pretitle text-pretitle">Hey There!</div>
+                        <h1 class="s-intro__content-title">
+                        I'm Atul Akella<br>
+                        A maker at heart and<br>
+                        an engineer by passion
+                        </h1>                            
+
+                        <div class="s-intro__content-btns">
+                            <a class="smoothscroll btn" href="#projects">View my work</a>
+                            <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+                        </div> <!-- s-intro__content-btns -->   
+
+                    </div> <!-- s-intro__content-text -->                     
+                    
+                </div> <!-- s-intro__content-inner -->  
+            </div> <!-- s-intro__content -->
+
+            <ul class="s-intro__social social-list">
+                <li>
+                    <a href="https://github.com/atulakella/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                        <span class="u-screen-reader-text">GitHub</span>
                     </a>
-                    <a href="#Features25" class="thq-body-small thq-link">
-                      <fragment class="home-fragment12">
-                        <span class="home-text12">About Me</span>
-                      </fragment>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/atulakella/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.75 18h-2.5v-9h2.5v9zm-1.25-10.268c-.789 0-1.25-.512-1.25-1.147 0-.641.471-1.145 1.272-1.145s1.25.504 1.272 1.145c0 .635-.483 1.147-1.272 1.147zm12.25 10.268h-2.5v-4.898c0-1.169-.022-2.676-1.629-2.676-1.63 0-1.879 1.274-1.879 2.594v4.98h-2.5v-9h2.403v1.234h.034c.334-.63 1.144-1.294 2.352-1.294 2.514 0 2.976 1.657 2.976 3.811v5.249z"></path>
+                        </svg>
+                        <span class="u-screen-reader-text">LinkedIn</span>
                     </a>
-                    <a href="#Steps2" class="thq-body-small thq-link">
-                      <fragment class="home-fragment13">
-                        <span class="home-text13">Things I'm proud of</span>
-                      </fragment>
+                </li>
+                
+                <li>
+                    <a href="https://x.com/AtulAkella">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                        <span class="u-screen-reader-text">Twitter</span>
                     </a>
-                    <a href="#Testimonial17" class="thq-body-small thq-link">
-                      <fragment class="home-fragment14">
-                        <span class="home-text14">Projects</span>
-                      </fragment>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/atul71_/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                        <span class="u-screen-reader-text">Instagram</span>
                     </a>
-                    <a href="#Contact16" class="thq-body-small thq-link">
-                      <fragment class="home-fragment15">
-                        <span class="home-text15">Contact Me!</span>
-                      </fragment>
-                    </a>
-                  </nav>
-                </div>
-                <div class="navbar3-icon-group2">
-                  <svg
-                    viewBox="0 0 950.8571428571428 1024"
-                    class="thq-icon-small"
-                  >
-                    <path
-                      d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 877.7142857142857 1024"
-                    class="thq-icon-small"
-                  >
-                    <path
-                      d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 602.2582857142856 1024"
-                    class="thq-icon-small"
-                  >
-                    <path
-                      d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </header>
-          </header>
-        </navbar3-wrapper>
-        <hero6-wrapper class="hero6-wrapper" rootclassname="hero6undefined">
-          <!--Hero6 component-->
-          <div
-            id="Hero6"
-            class="hero6-header19 thq-section-padding hero6root-class-name"
-          >
-            <div class="hero6-max-width thq-flex-row thq-section-max-width">
-              <img
-                alt="Hero Image"
-                src="public/frame%201-700h-1400w.png"
-                class="hero6-hero-image thq-img-ratio-4-3"
-              />
-              <div class="hero6-column">
-                <div class="hero6-content">
-                  <h1 class="hero6-text10 thq-heading-1">
-                    <fragment class="home-fragment19">
-                      <span class="home-text19">
-                        <span>Hey there!</span>
-                        <br />
-                        <span>I'm Atul Akella&nbsp;</span>
-                      </span>
-                    </fragment>
-                  </h1>
-                  <p class="hero6-text11 thq-body-large">
-                    <fragment class="home-fragment18">
-                      <span class="home-text18">
-                        A maker at heart and an engineer by passion
-                      </span>
-                    </fragment>
-                  </p>
-                  <div class="hero6-actions">
-                    <button class="thq-button-filled hero6-button1">
-                      <span class="thq-body-small">
-                        <fragment class="home-fragment16">
-                          <span class="home-text16">View My Work</span>
-                        </fragment>
-                      </span>
-                    </button>
-                    <a
-                      href="mailto:atul.akella@gmail.com?subject=Hey Atul! let's work on something really cool!"
-                      class="hero6-button2 thq-button-outline"
-                    >
-                      <span class="thq-body-small">
-                        <fragment class="home-fragment17">
-                          <span class="home-text17">Get in touch!</span>
-                        </fragment>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </hero6-wrapper>
-        <features25-wrapper class="features25-wrapper">
-          <!--Features25 component-->
-          <div
-            id="Features25"
-            class="features25-container1 thq-section-padding"
-          >
-            <div class="features25-container2 thq-section-max-width">
-              <div class="features25-tabs-menu">
-                <div class="features25-tab-horizontal">
-                  <div class="features25-divider-container">
-                    <div class="features25-container3"></div>
-                  </div>
-                  <animate-on-reveal
-                    animation="fadeIn"
-                    duration="500ms"
-                    delay="0s"
-                    direction="normal"
-                    easing="ease"
-                    iteration="1"
-                  >
-                    <div
-                      data-thq-animate-on-reveal="true"
-                      class="features25-content"
-                    >
-                      <h2 class="thq-heading-2">
-                        <fragment class="home-fragment20">
-                          <span class="home-text23">About Me</span>
-                        </fragment>
-                      </h2>
-                      <span class="thq-body-small">
-                        <fragment class="home-fragment21">
-                          <span class="home-text24">
-                            <span class="home-text25">
-                              Hey there! I’m Atul Akella, an Electronics and
-                              Communications Engineering student who loves
-                              building things. I’m not just limited to ECE—I
-                              consider myself a "maker" at heart. Ever since I
-                              was young, I’ve been drawn to technology, and over
-                              the years, I’ve worked on projects using hardware
-                              like Arduino, ESP32, Raspberry Pi, and NVIDIA
-                              Jetson, along with programming skills in C++ and
-                              Python.
-                            </span>
-                            <br class="home-text26" />
-                            <br class="home-text27" />
-                            <span class="home-text28">
-                              I’m really interested in robotics, AI, and machine
-                              learning, and I’m always learning new things in
-                              these areas. I’ve also explored ROS2, which has
-                              helped me take on some exciting robotics projects.
-                              Apart from my core field, I’m curious about
-                              machine learning, backend development, APIs, CAD
-                              design, 3D printing, and networking. I’m even into
-                              self-hosting my own projects—it’s a fun challenge!
-                            </span>
-                            <br class="home-text29" />
-                            <br class="home-text30" />
-                            <span class="home-text31">
-                              When I’m not working on projects, I love
-                              participating in hackathons and CTFs, and as a
-                              freshman. If you’re into tech or just want to chat
-                              about cool projects, feel free to reach out. Let’s
-                              connect!
-                            </span>
-                            <br class="home-text32" />
-                            <br />
-                          </span>
-                        </fragment>
-                      </span>
+                </li>
+            </ul> <!-- end s-intro__social -->
+
+            <div class="s-intro__content-media">                               
+                <img src="images/about.png" srcset="images/about.png 1x, images/about.png 2x" alt="">
+            </div> <!-- s-intro__content-media -->                
+
+            <div class="s-intro__btn-download">
+                <a class="btn btn--stroke" href="#0">Get My CV</a>
+            </div> <!-- end s-intro__btn-download -->
+            
+            <div class="s-intro__scroll-down">
+                <a href="#about" class="smoothscroll">
+                    <div class="scroll-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
                     </div>
-                  </animate-on-reveal>
-                </div>
-              </div>
-              <div class="features25-image-container">
-                <animate-on-reveal
-                  animation="fadeIn"
-                  duration="300ms"
-                  delay="0s"
-                  direction="normal"
-                  easing="ease"
-                  iteration="1"
-                >
-                  <img
-                    alt="Project Management Image Alt Text"
-                    src="public/about-800w.jpeg"
-                    data-thq-animate-on-reveal="true"
-                    class="features25-image1 thq-img-ratio-16-9"
-                  />
-                </animate-on-reveal>
-              </div>
-            </div>
-          </div>
-        </features25-wrapper>
-        <cta26-wrapper class="cta26-wrapper">
-          <!--CTA26 component-->
-          <div class="thq-section-padding">
-            <div class="thq-section-max-width">
-              <div class="cta26-accent2-bg">
-                <div class="cta26-accent1-bg">
-                  <div class="cta26-container2">
-                    <div class="cta26-content">
-                      <span class="thq-heading-2">
-                        <fragment class="home-fragment24">
-                          <span class="home-text36">Ready to collaborate?</span>
-                        </fragment>
-                      </span>
-                      <p class="thq-body-large">
-                        <fragment class="home-fragment23">
-                          <span class="home-text35">
-                            Let's work together to bring our ideas to life.
-                          </span>
-                        </fragment>
-                      </p>
-                    </div>
-                    <div class="cta26-actions">
-                      <a
-                        href="mailto:atul.akella@gmail.com?subject=Hey Atul, Let's work ono something really cool!"
-                        class="cta26-link thq-button-filled"
-                      >
-                        <span>
-                          <fragment class="home-fragment22">
-                            <span class="home-text34">Contact Me</span>
-                          </fragment>
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </cta26-wrapper>
-        <steps2-wrapper class="steps2-wrapper">
-          <!--Steps2 component-->
-          <div id="Steps2" class="steps2-container1 thq-section-padding">
-            <div class="steps2-max-width thq-section-max-width">
-              <div class="steps2-container2 thq-grid-2">
-                <animate-on-reveal
-                  animation="fadeIn"
-                  duration="300ms"
-                  delay="0s"
-                  direction="normal"
-                  easing="ease"
-                  iteration="1"
-                >
-                  <div
-                    data-thq-animate-on-reveal="true"
-                    class="steps2-section-header"
-                  >
-                    <h2 class="thq-heading-2">A few things I'm proud of...</h2>
-                    <p class="thq-body-large">
-                      These are a few achievements that make me smile when I
-                      look back. Each one reflects my curiosity and passion for
-                      building and creating. From making my first robot at 13 to
-                      representing my school at IIT Kharagpur, these moments
-                      remind me of the challenges I faced and the lessons I
-                      learned. They inspire me to keep exploring and creating
-                      new things every day.
-                    </p>
-                    <div class="steps2-actions"></div>
-                  </div>
-                </animate-on-reveal>
-                <div class="steps2-container3">
-                  <div class="steps2-container4 thq-card">
-                    <h2 class="steps2-text12 thq-heading-2">
-                      <fragment class="home-fragment25">
-                        <span class="home-text37">
-                          Built my first robot at age 13
-                        </span>
-                      </fragment>
-                    </h2>
-                    <span class="steps2-text13 thq-body-small">
-                      <fragment class="home-fragment29">
-                        <span class="home-text41">
-                          I started my journey into the world of robotics with
-                          sheer curiosity, I made my first Bluetooth-controlled
-                          robotic arm boasting three degrees of freedom, which
-                          ignited my passion for technology and innovation. I
-                          uploaded a video demonstration of it on YouTube.
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="steps2-container5 thq-card">
-                    <h2 class="steps2-text14 thq-heading-2">
-                      <fragment class="home-fragment26">
-                        <span class="home-text38">
-                          Developed first portfolio website at age 15
-                        </span>
-                      </fragment>
-                    </h2>
-                    <span class="steps2-text15 thq-body-small">
-                      <fragment class="home-fragment30">
-                        <span class="home-text42">
-                          I honed my skills further by designing and developing
-                          my personal portfolio website. Fueled by the desire to
-                          showcase my projects and accomplishments, also network
-                          with people. Furthermore I made a playful chatbot
-                          equipped with knowledge about me and a little sense of
-                          humor, adds an interactive element to my digital
-                          presence.
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="steps2-container6 thq-card">
-                    <h2 class="steps2-text16 thq-heading-2">
-                      <fragment class="home-fragment27">
-                        <span class="home-text39">
-                          Represented school at IIT Kharagpur at 14
-                        </span>
-                      </fragment>
-                    </h2>
-                    <span class="steps2-text17 thq-body-small">
-                      <fragment class="home-fragment31">
-                        <span class="home-text43">
-                          I represented my school at the prestigious
-                          IIT-Kharagpur. Leading my team to the finals of the
-                          pan Asia Young Innovator’s Program (YIP 2019), hosted
-                          by IIT Kharagpur, was an honor. Amongst thousands of
-                          teams, we stood out, securing a position in the top 30
-                          with our innovative approach to address vehicular
-                          pollution.
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="steps2-container7 thq-card">
-                    <h2 class="steps2-text18 thq-heading-2">
-                      <fragment class="home-fragment28">
-                        <span class="home-text40">
-                          Started professional journey at 18
-                        </span>
-                      </fragment>
-                    </h2>
-                    <span class="steps2-text19 thq-body-small">
-                      <fragment class="home-fragment32">
-                        <span class="home-text44">
-                          I began my professional journey as a Machine Learning
-                          Solutions Engineer at ShrimpIQ, a startup focusing on
-                          real-time innovations to revolutinize the aquaculture
-                          industry. Applying my machine learning skills to
-                          real-world challenges was both exciting and
-                          fulfilling.
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="steps2-container6 thq-card">
-                    <h2 class="steps2-text16 thq-heading-2">
-                      <fragment class="home-fragment27">
-                        <span class="home-text39">
-                          Won three hackathons as a college freshman
-                        </span>
-                      </fragment>
-                    </h2>
-                    <span class="steps2-text17 thq-body-small">
-                      <fragment class="home-fragment31">
-                        <span class="home-text43">
-                          As a college freshman, I proudly won three hackathons, one of which was held at IIT Roorkee, showcasing my ability to think creatively and tackle real-world challenges in a competitive environment.
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </steps2-wrapper>
+                    <span class="scroll-text u-screen-reader-text">Scroll Down</span>
+                </a>
+            </div> <!-- s-intro__scroll-down -->
+
+        </section> <!-- end s-intro -->
+
+
+        <!-- # about
+        ================================================== -->
+        <section id="about" class="s-about target-section">
+
+            <div class="row s-about__content">
+                <div class="column xl-12">    
+                    
+                    <div class="section-header" data-num="01">
+                        <h2 class="text-display-title">About Me.</h2>
+                    </div> <!-- end section-header -->
+
+                    <p class="attention-getter">
+                        Hey there! I’m Atul Akella, an Electronics and Communications Engineering student who loves building things. I’m not just limited to ECE—I consider myself a "maker" at heart. Ever since I was young, I’ve been drawn to technology, and over the years, I’ve worked on projects using hardware like Arduino, ESP32, Raspberry Pi, and NVIDIA Jetson, along with programming skills in C++ and Python. I’m really interested in robotics, AI, and machine learning, and I’m always learning new things in these areas. I’ve also explored ROS2, which has helped me take on some exciting robotics projects. Apart from my core field, I’m curious about machine learning, backend development, APIs, CAD design, 3D printing, and networking. I’m even into self-hosting my own projects—it’s a fun challenge!                     </p>
+
+                    <p class="attention-getter">
+                        When I’m not working on projects, I love participating in hackathons and CTFs, and as a freshman. If you’re into tech or just want to chat about cool projects, feel free to reach out. Let’s connect!                     </p>
+            
+        </section> <!-- end s-about -->   
+
 
         <div class="ProjectContainer" id="projects">
-          <h2 class="thq-heading-2">Projects</h2>
-          <div class="projects-wrapper">
-            <div class="project">
-              <img src="public/ghee.jpg" alt="Project 1" class="project-image" />
-              <div class="project-info">
-                <h2 class="project-title">The Ghee Project</h2>
-                <p class="project-description">Moved by the Tirupati laddu controversy, where beef tallow was reportedly mixed into the sacred prasadam, I started developing an electronic nose to differentiate between pure desi ghee and adulterated ghee. So far, I've achieved 68% accuracy and am actively working on improving its precision.</p>
-                <a href="#" class="learn-more-btn">Learn More</a>
-              </div>
+            <div class="row">
+                <div class="column xl-12">
+                    <div class="section-header" data-num="02">
+                        <h2 class="text-display-title">Projects.</h2>
+                    </div> <!-- end section-header -->
+                </div>
             </div>
-            <div class="project">
-              <img src="public/brain.jpg" alt="Project 2" class="project-image" />
-              <div class="project-info">
-                <h2 class="project-title">Brain Activity Monitoring</h2>
-                <p class="project-description">I developed a brain activity monitoring project that differentiates between states like meditation, normal activity, studying, and gaming. This exciting work has opened up new avenues for exploration, and I'm actively continueing to building on top of this. </p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+            <div class="projects-wrapper">
+              <div class="project">
+                <img src="images/ghee.jpg" alt="Project 1" class="project-image" />
+                <div class="project-info">
+                  <h2 class="project-title">The Ghee Project</h2>
+                  <p class="project-description">Moved by the Tirupati laddu controversy, where beef tallow was reportedly mixed into the sacred prasadam, I started developing an electronic nose to differentiate between pure desi ghee and adulterated ghee. So far, I've achieved 68% accuracy and am actively working on improving its precision.</p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
               </div>
-            </div>
-            <div class="project">
-              <img
-                alt="HiddenHandle"
-                src="public/hiddenhandle-600h.jpeg"
-                class="project-image"
-              />
-              <div class="project-info">
-                <h2 class="project-title">Hidden Handle</h2>
-                <p class="project-description">THis solution offers a new novel way of upgrading that door handle in an inconspicuous way that is non-existent in the current smart door handle market bloated with complicated and intimidating-looking mechanisms.</p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+              <div class="project">
+                <img src="images/brain.jpg" alt="Project 2" class="project-image" />
+                <div class="project-info">
+                  <h2 class="project-title">Brain Activity Monitoring</h2>
+                  <p class="project-description">I developed a brain activity monitoring project that differentiates between states like meditation, normal activity, studying, and gaming. This exciting work has opened up new avenues for exploration, and I'm actively continueing to building on top of this. </p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
               </div>
-            </div>
-            <div class="project">
-              <img src="public/reportify.png" alt="Project 3" class="project-image" />
-              <div class="project-info">
-                <h2 class="project-title">Reportify</h2>
-                <p class="project-description">A Smart Medical Diagnostic Reporting System built with ML models , API's, MongoDB , Ollama3 aiming to provide users with intuitive and informative reports for diagnostic test results, enhancing their understanding and enabling better healthcare decisions. </p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+              <div class="project">
+                <img
+                  alt="HiddenHandle"
+                  src="images/hiddenhandle-600h.jpeg"
+                  class="project-image"
+                />
+                <div class="project-info">
+                  <h2 class="project-title">Hidden Handle</h2>
+                  <p class="project-description">THis solution offers a new novel way of upgrading that door handle in an inconspicuous way that is non-existent in the current smart door handle market bloated with complicated and intimidating-looking mechanisms.</p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
               </div>
-            </div>
-            <div class="project">
-              <img src="public/arm.jpg" alt="Project 4" class="project-image" />
-              <div class="project-info">
-                <h2 class="project-title">CutieBot</h2>
-                <p class="project-description">I created a manipulator using ROS2 to deepen my understanding of the powerful framework. This project features self-awareness, allowing it to navigate various spaces and orientations. It was an exciting dive into robotics that significantly enhanced my skills. </p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+              <div class="project">
+                <img src="images/reportify.png" alt="Project 3" class="project-image" />
+                <div class="project-info">
+                  <h2 class="project-title">Reportify</h2>
+                  <p class="project-description">A Smart Medical Diagnostic Reporting System built with ML models , API's, MongoDB , Ollama3 aiming to provide users with intuitive and informative reports for diagnostic test results, enhancing their understanding and enabling better healthcare decisions. </p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
               </div>
-            </div>
-            <div class="project">
-              <img src="public/PlantSense.png" alt="Project 5" class="project-image" />
-              <div class="project-info">
-                <h2 class="project-title">Plant Sense</h2>
-                <p class="project-description">PlantSense is a user-friendly, web-based solution designed to help farmers identify and manage plant diseases without the need for expensive technology such as drones, thermal sensors, or specialized hardware. Farmers can simply upload an image of their plant, and our platform—powered by YOLOv11. </p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+              <div class="project">
+                <img src="images/arm.jpg" alt="Project 4" class="project-image" />
+                <div class="project-info">
+                  <h2 class="project-title">CutieBot</h2>
+                  <p class="project-description">I created a manipulator using ROS2 to deepen my understanding of the powerful framework. This project features self-awareness, allowing it to navigate various spaces and orientations. It was an exciting dive into robotics that significantly enhanced my skills. </p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
               </div>
+              <div class="project">
+                <img src="images/PlantSense.png" alt="Project 5" class="project-image" />
+                <div class="project-info">
+                  <h2 class="project-title">Plant Sense</h2>
+                  <p class="project-description">PlantSense is a user-friendly, web-based solution designed to help farmers identify and manage plant diseases without the need for expensive technology such as drones, thermal sensors, or specialized hardware. Farmers can simply upload an image of their plant, and our platform—powered by YOLOv11. </p>
+                  <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+              </div>
+              
+              
+              <!-- Repeat similar structure for other projects -->
             </div>
             
-            
-            <!-- Repeat similar structure for other projects -->
-          </div>
-          
-          </div>
-          <div class="navigation">
-              <button id="prevBtn" class="nav-button" disabled>Previous</button>
-              <button id="nextBtn" class="nav-button">Next</button>
-          </div>
-      </div>
+            </div>
+        </div>
+  
+  
 
-        <contact16-wrapper
-          class="contact16-wrapper"
-          rootclassname="contact16undefined"
-        >
-          <!--Contact16 component-->
-          <div
-            id="Contact16"
-            class="contact16-contact20 thq-section-padding contact16root-class-name"
-          >
-            <h2 class="contact16-text1 thq-heading-2">
-              <fragment class="home-fragment34">
-                <span class="home-text49">Contact me</span>
-              </fragment>
-            </h2>
-            <div class="contact16-content"></div>
-            <p class="contact16-text2 thq-body-large">
-              <fragment class="home-fragment33">
-                <span class="home-text45">
-                  <span>
-                    Let's be honest, your inbox is probably pretty boring. Spice
-                    it up with a message from me.
-                  </span>
-                  <br />
-                  <span>You won't regret it (probably).</span>
-                </span>
-              </fragment>
-            </p>
-            <div class="contact16-container">
-              <a
-                href="mailto:atul.akella@gmail.com?subject=Hey Atul!"
-                class="contact16-link1"
-              >
-                <svg viewBox="0 0 1024 1024" class="contact16-icon10">
-                  <path
-                    d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UClNgUQWHP2S233BL4pywaaQ"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="contact16-link2"
-              >
-                <svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="contact16-icon12"
-                >
-                  <path
-                    d="M554.857 710.857v120.571c0 25.714-7.429 38.286-22.286 38.286-8.571 0-17.143-4-25.714-12.571v-172c8.571-8.571 17.143-12.571 25.714-12.571 14.857 0 22.286 13.143 22.286 38.286zM748 711.429v26.286h-51.429v-26.286c0-25.714 8.571-38.857 25.714-38.857s25.714 13.143 25.714 38.857zM196 586.857h61.143v-53.714h-178.286v53.714h60v325.143h57.143v-325.143zM360.571 912h50.857v-282.286h-50.857v216c-11.429 16-22.286 24-32.571 24-6.857 0-10.857-4-12-12-0.571-1.714-0.571-8-0.571-20v-208h-50.857v223.429c0 20 1.714 33.143 4.571 41.714 4.571 14.286 16.571 21.143 33.143 21.143 18.286 0 37.714-11.429 58.286-34.857v30.857zM605.714 827.429v-112.571c0-26.286-1.143-45.143-5.143-56.571-6.286-21.143-20.571-32-40.571-32-18.857 0-36.571 10.286-53.143 30.857v-124h-50.857v378.857h50.857v-27.429c17.143 21.143 34.857 31.429 53.143 31.429 20 0 34.286-10.857 40.571-31.429 4-12 5.143-30.857 5.143-57.143zM798.857 821.714v-7.429h-52c0 20.571-0.571 32-1.143 34.857-2.857 13.714-10.286 20.571-22.857 20.571-17.714 0-26.286-13.143-26.286-39.429v-49.714h102.286v-58.857c0-30.286-5.143-52-15.429-66.286-14.857-19.429-34.857-29.143-60.571-29.143-26.286 0-46.286 9.714-61.143 29.143-10.857 14.286-16 36-16 66.286v98.857c0 30.286 5.714 52.571 16.571 66.286 14.857 19.429 34.857 29.143 61.714 29.143s48-10.286 61.714-30.286c6.286-9.143 10.857-19.429 12-30.857 1.143-5.143 1.143-16.571 1.143-33.143zM451.429 300v-120c0-26.286-7.429-39.429-24.571-39.429-16.571 0-24.571 13.143-24.571 39.429v120c0 26.286 8 40 24.571 40 17.143 0 24.571-13.714 24.571-40zM862.286 729.143c0 65.714-0.571 136-14.857 200-10.857 45.143-47.429 78.286-91.429 82.857-105.143 12-211.429 12-317.143 12s-212 0-317.143-12c-44-4.571-81.143-37.714-91.429-82.857-14.857-64-14.857-134.286-14.857-200v0c0-66.286 0.571-136 14.857-200 10.857-45.143 47.429-78.286 92-83.429 104.571-11.429 210.857-11.429 316.571-11.429s212 0 317.143 11.429c44 5.143 81.143 38.286 91.429 83.429 14.857 64 14.857 133.714 14.857 200zM292 0h58.286l-69.143 228v154.857h-57.143v-154.857c-5.143-28-16.571-68-34.857-121.143-12.571-35.429-25.143-71.429-37.143-106.857h60.571l40.571 150.286zM503.429 190.286v100c0 30.286-5.143 53.143-16 67.429-14.286 19.429-34.286 29.143-60.571 29.143-25.714 0-45.714-9.714-60-29.143-10.857-14.857-16-37.143-16-67.429v-100c0-30.286 5.143-52.571 16-66.857 14.286-19.429 34.286-29.143 60-29.143 26.286 0 46.286 9.714 60.571 29.143 10.857 14.286 16 36.571 16 66.857zM694.857 97.714v285.143h-52v-31.429c-20.571 24-40 35.429-58.857 35.429-16.571 0-28.571-6.857-33.714-21.143-2.857-8.571-4.571-22.286-4.571-42.857v-225.143h52v209.714c0 12 0 18.857 0.571 20 1.143 8 5.143 12.571 12 12.571 10.286 0 21.143-8 32.571-24.571v-217.714h52z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/atulakella/"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="contact16-link3"
-              >
-                <svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="contact16-icon14"
-                >
-                  <path
-                    d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com/_atulll68_/"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="contact16-link4"
-              >
-                <svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="contact16-icon16"
-                >
-                  <path
-                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/atulakella"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="contact16-link5"
-              >
-                <svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="contact16-icon18"
-                >
-                  <path
-                    d="M296.571 685.714v0c1.143-1.714 0.571-5.143-1.714-7.429-2.857-2.286-6.286-2.857-8-1.143-1.143 1.714-0.571 5.143 1.714 7.429 2.857 2.286 6.286 2.857 8 1.143zM280.571 662.286c-1.714-2.286-4.571-3.429-6.857-2.286-1.714 1.143-1.714 4.571 0 6.857 2.286 2.857 5.143 4 6.857 2.857v0c1.714-1.143 1.714-4.571 0-7.429zM257.143 639.429v0c0.571-1.143-0.571-3.429-2.857-4.571-1.714-0.571-4-0.571-4.571 1.143-1.143 1.714 0 3.429 2.286 4.571 2.286 0.571 4.571 0.571 5.143-1.143zM269.143 652.571v0c1.143-1.143 1.143-4-1.143-5.714-1.714-2.286-4.571-2.857-5.714-1.714-1.714 1.714-1.143 4 0.571 6.286 1.714 1.714 4.571 2.857 6.286 1.143zM318.286 695.429v0c0.571-2.286-1.714-5.143-5.143-6.286s-6.286 0-7.429 2.286c-0.571 2.286 1.714 5.143 5.143 6.286s6.286 0 7.429-2.286zM342.286 697.143v0c0-2.286-2.857-4.571-6.857-4.571-3.429 0-5.714 2.286-5.714 4.571s2.857 4.571 6.286 4.571 6.286-2.286 6.286-4.571zM364.571 693.143v0c-0.571-2.286-4-3.429-7.429-2.857s-5.714 2.857-5.143 5.143 3.429 4 6.857 3.429 5.714-3.429 5.714-5.714zM731.429 512c0-161.714-130.857-292.571-292.571-292.571s-292.571 130.857-292.571 292.571c0 129.143 84 238.857 200 277.714 14.857 2.857 20-6.286 20-14.286 0-6.857 0-29.714-0.571-54.286 0 0-81.143 17.714-98.286-34.857 0 0-13.143-33.714-32.571-42.286 0 0-26.286-18.286 2.286-18.286 0 0 28.571 2.286 44.571 30.286 25.714 45.143 68.571 32 85.143 24.571 2.857-18.857 10.286-32 18.857-39.429-65.143-7.429-133.714-32.571-133.714-144.571 0-32 11.429-57.714 30.286-78.286-2.857-7.429-13.143-37.143 2.857-77.714 24.571-7.429 80.571 30.286 80.571 30.286 23.429-6.857 48-9.714 73.143-9.714s49.714 2.857 73.143 9.714c0 0 56-37.714 80.571-30.286 16 40.571 5.714 70.286 2.857 77.714 18.857 20.571 30.286 46.286 30.286 78.286 0 112.571-68.571 137.143-133.714 144.571 10.286 9.143 20 26.857 20 54.286 0 38.857-0.571 70.286-0.571 80 0 8 5.143 17.143 20 14.286 116-38.857 200-148.571 200-277.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
-                  ></path>
-                </svg>
-              </a>
+        <!-- # works
+        ================================================== -->
+        <div style="height: 80px;" id="Things"></div> 
+        <div class="row">
+            <div class="column xl-12">
+                <div class="section-header" data-num="03">
+                    <h2 class="text-display-title">A few things I'm proud of.</h2>
+                </div> <!-- end section-header -->
             </div>
-          </div>
-        </contact16-wrapper>
-      </div>
+        </div>
+        <div class="achievement-timeline">
+        <div class="container">
+            <div class="timeline-container" id="timelineContainer">
+                <div class="cards" id="cards">
+                    <div class="card">
+                        <h2>Built my first robot at age 13</h2>
+                        <p>Started my journey into robotics with a Bluetooth-controlled robotic arm, igniting my passion for technology and innovation.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Represented school at IIT Kharagpur at age 14</h2>
+                        <p>Led my team to finals of pan Asia Young Innovator's Program (YIP 2019), securing a top 30 position among thousands.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Developed first portfolio website at age 15</h2>
+                        <p>Designed and developed my personal portfolio website, showcasing projects and featuring an interactive chatbot.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Started professional journey at age 18</h2>
+                        <p>Began as a Machine Learning Solutions Engineer at ShrimpIQ, applying ML skills to solve real-world challenges in the aquaculture industry.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Won three hackathons as a college freshman</h2>
+                        <p>As a college freshman, I proudly won three hackathons, one of which was held at IIT Roorkee, showcasing my solve real world problmes.</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                </div>
+                <div class="timeline-markers" id="timelineMarkers"></div>
+            </div>
+        </div>
     </div>
-    <script
-      defer=""
-      src="https://unpkg.com/@teleporthq/react-components/dist/animate-on-reveal.umd.js"
-    ></script>
-    <script
-      defer=""
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
-  </body>
+
+           
+        <!-- # numbers
+        ================================================== -->
+
+
+        <!-- # footer 
+        ================================================== -->
+        <footer id="footer" class="s-footer target-section">
+
+            <div class="row">
+                <div class="column lg-12">
+                    <div class="section-header light-on-dark" data-num="04">
+                        <h2 class="text-display-title">Get In Touch.</h2>
+                    </div> <!-- end section-header -->
+                </div>
+            </div>
+
+            <div class="row s-footer__content">
+
+                <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
+                    <p class="attention-getter">
+                    Let's be honest, your inbox is probably pretty boring. Spice it up with a message from me.
+                    You won't regret it (probably). 
+                    </p>               
+                </div> <!-- end section-footer__about -->
+
+                <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
+                    <div class="row">
+                        <div class="column xl-4 lg-5 md-6 tab-12">
+                            <h5>Follow Me</h5>
+                            <ul class="link-list">
+                                <li><a href="https://github.com/atulakella/">Github</a></li>
+                                <li><a href="https://www.linkedin.com/in/atulakella/">LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/atul71_/">Instagram</a></li>
+                                <li><a href="https://x.com/AtulAkella">X</a></li>
+                            </ul>
+                        </div>
+                        <div class="column xl-6 md-6 tab-12">
+                            <h5>Contact Me</h5>
+                            <ul class="link-list">
+                                <li><a href="mailto:#0">atul.akella@gmail.com</a></li>
+                            </ul> 
+                        </div>
+                    </div>                    
+                </div> <!-- end section-footer__site-links -->
+
+            </div> <!-- end section-footer__content -->
+
+
+            <div class="row s-footer__buttons">
+               
+                <div class="column xl-6 tab-12">
+                    <a href="mailto:#0" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
+                </div>
+          
+                <div class="column xl-6 tab-12">                    
+                    <a href="#0" class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
+                </div>
+            
+            </div> <!-- end section-footer__buttons -->              
+            
+            <div class="row s-footer__bottom">
+                
+                <div class="column xl-6 lg-12">
+                    <ul class="s-footer__social social-list">
+                        <li>
+                            <a href="https://github.com/atulakella/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/atulakella/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.75 18h-2.5v-9h2.5v9zm-1.25-10.268c-.789 0-1.25-.512-1.25-1.147 0-.641.471-1.145 1.272-1.145s1.25.504 1.272 1.145c0 .635-.483 1.147-1.272 1.147zm12.25 10.268h-2.5v-4.898c0-1.169-.022-2.676-1.629-2.676-1.63 0-1.879 1.274-1.879 2.594v4.98h-2.5v-9h2.403v1.234h.034c.334-.63 1.144-1.294 2.352-1.294 2.514 0 2.976 1.657 2.976 3.811v5.249z"></path>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://x.com/AtulAkella">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/atul71_/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                    </ul> 
+                </div> <!-- end section-footer__social -->
+
+                
+            </div> <!-- end section-footer__bottom -->          
+
+            
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end page-wrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const timelineContainer = document.getElementById('timelineContainer');
+        const cards = document.getElementById('cards');
+        const timelineProgress = document.getElementById('timelineProgress');
+        const timelineMarkers = document.getElementById('timelineMarkers');
+        const achievements = [
+            { age: 13, title: "Built my first robot" },
+            { age: 14, title: "Represented school at IIT Kharagpur" },
+            { age: 15, title: "Developed first portfolio website" },
+            { age: 18, title: "Started professional journey" },
+            { age: 19, title: "Won three hackathons as a college freshman" }
+        ];
+
+        function createTimelineMarkers() {
+            achievements.forEach((achievement, index) => {
+                const marker = document.createElement('div');
+                marker.classList.add('timeline-marker');
+                marker.addEventListener('click', () => scrollToCard(index));
+
+                const label = document.createElement('div');
+                label.classList.add('timeline-label');
+                label.textContent = `Age ${achievement.age}`;
+
+                const markerContainer = document.createElement('div');
+                markerContainer.appendChild(marker);
+                markerContainer.appendChild(label);
+
+                timelineMarkers.appendChild(markerContainer);
+            });
+        }
+
+        function scrollToCard(index) {
+            const cardWidth = cards.children[0].offsetWidth;
+            const scrollPosition = index * (cardWidth + 16); // 16px for gap
+            cards.style.transform = `translateX(-${scrollPosition}px)`;
+            updateTimelineProgress(index);
+        }
+
+        function updateTimelineProgress(index) {
+            const progress = (index / (achievements.length - 1)) * 100;
+            timelineProgress.style.width = `${progress}%`;
+        }
+
+        createTimelineMarkers();
+
+        // Initialize timeline progress
+        updateTimelineProgress(0);
+
+        // Add drag functionality to the timeline
+        let isDragging = false;
+        let startX, startScrollLeft;
+
+        timelineMarkers.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - timelineMarkers.offsetLeft;
+            startScrollLeft = cards.scrollLeft;
+        });
+
+        timelineMarkers.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        timelineMarkers.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        timelineMarkers.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - timelineMarkers.offsetLeft;
+            const walk = (x - startX) * 2;
+            const index = Math.round(walk / (cards.children[0].offsetWidth + 16));
+            scrollToCard(Math.max(0, Math.min(achievements.length - 1, index)));
+        });
+    </script>
+</body>
 </html>
