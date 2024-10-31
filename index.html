@@ -180,9 +180,9 @@
     .achievement-timeline {
         display: flex;
         justify-content: center;
-        padding: 2rem 0; /* Adjusts top and bottom padding */
-        margin: 0 auto; /* Centers horizontally */
-        width: 100%; /* Ensure it takes full width for alignment purposes */
+        padding: 2rem 0;
+        margin: 0 auto;
+        width: 100%;
     }
     .achievement-timeline body {
         font-family: Arial, sans-serif;
@@ -202,7 +202,7 @@
         box-sizing: border-box;
     }
 
-    .achievement-timeline h1 {
+    .achievement-timeline  h1 {
         text-align: center;
         color: #f5f5dc;
         margin-bottom: 2rem;
@@ -211,13 +211,17 @@
     .timeline-container {
         position: relative;
         width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        padding: 1rem 0;
     }
 
     .cards {
         display: flex;
         gap: 1rem;
-        transition: transform 0.3s ease;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-behavior: smooth;
+        scroll-padding: 1rem;
     }
 
     .card {
@@ -228,6 +232,13 @@
         padding: 1.5rem;
         width: 300px;
         flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card.highlighted {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(226, 226, 192, 0.5);
+        z-index: 1;
     }
 
     .card h2 {
@@ -278,10 +289,29 @@
     }
 
     .timeline-label {
-        font-size: 1.5rem;
-        color: #181d17;
+        font-size: 1.8rem;
+        color: #212820;
         text-align: center;
         margin-top: 0.25rem;
+    }
+
+    .cards::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .cards::-webkit-scrollbar-track {
+        background: #e5e7eb;
+        border-radius: 4px;
+    }
+
+    .cards::-webkit-scrollbar-thumb {
+        background-color: #212820;
+        border-radius: 4px;
+    }
+
+    .cards {
+        scrollbar-width: thin;
+        scrollbar-color: #212820 #e5e7eb;
     }
 
     @media (max-width: 768px) {
@@ -518,39 +548,37 @@
             </div>
         </div>
         <div class="achievement-timeline">
-        <div class="container">
-            <div class="timeline-container" id="timelineContainer">
-                <div class="cards" id="cards">
-                    <div class="card">
-                        <h2>Built my first robot at age 13</h2>
-                        <p>Started my journey into robotics with a Bluetooth-controlled robotic arm, igniting my passion for technology and innovation.</p>
+            <div class="container">
+                <div class="timeline-container" id="timelineContainer">
+                    <div class="cards" id="cards">
+                        <div class="card">
+                            <h2>Built my first robot at age 13</h2>
+                            <p>Started my journey into robotics with a Bluetooth-controlled robotic arm, igniting my passion for technology and innovation.</p>
+                        </div>
+                        <div class="card">
+                            <h2>Represented school at IIT Kharagpur at age 14</h2>
+                            <p>Led my team to finals of pan Asia Young Innovator's Program (YIP 2019), securing a top 30 position among thousands.</p>
+                        </div>
+                        <div class="card">
+                            <h2>Developed first portfolio website at age 15</h2>
+                            <p>Designed and developed my personal portfolio website, showcasing projects and featuring an interactive chatbot.</p>
+                        </div>
+                        <div class="card">
+                            <h2>Started professional journey at age 18</h2>
+                            <p>Began as a Machine Learning Solutions Engineer at ShrimpIQ, applying ML skills to solve real-world challenges in the aquaculture industry.</p>
+                        </div>
+                        <div class="card">
+                            <h2>Won three hackathons as a college freshman</h2>
+                            <p>As a college freshman, I proudly won three hackathons, one of which was held at IIT Roorkee, showcasing my ability to solve real world problems.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h2>Represented school at IIT Kharagpur at age 14</h2>
-                        <p>Led my team to finals of pan Asia Young Innovator's Program (YIP 2019), securing a top 30 position among thousands.</p>
+                    <div class="timeline">
+                        <div class="timeline-progress" id="timelineProgress"></div>
                     </div>
-                    <div class="card">
-                        <h2>Developed first portfolio website at age 15</h2>
-                        <p>Designed and developed my personal portfolio website, showcasing projects and featuring an interactive chatbot.</p>
-                    </div>
-                    <div class="card">
-                        <h2>Started professional journey at age 18</h2>
-                        <p>Began as a Machine Learning Solutions Engineer at ShrimpIQ, applying ML skills to solve real-world challenges in the aquaculture industry.</p>
-                    </div>
-                    <div class="card">
-                        <h2>Won three hackathons as a college freshman</h2>
-                        <p>As a college freshman, I proudly won three hackathons, one of which was held at IIT Roorkee, showcasing my solve real world problmes.</p>
-                    </div>
+                    <div class="timeline-markers" id="timelineMarkers"></div>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-progress" id="timelineProgress"></div>
-                </div>
-                <div class="timeline-markers" id="timelineMarkers"></div>
             </div>
         </div>
-    </div>
-
-           
         <!-- # numbers
         ================================================== -->
 
@@ -660,7 +688,6 @@
     <script src="js/main.js"></script>
 
     <script>
-        const timelineContainer = document.getElementById('timelineContainer');
         const cards = document.getElementById('cards');
         const timelineProgress = document.getElementById('timelineProgress');
         const timelineMarkers = document.getElementById('timelineMarkers');
@@ -693,8 +720,9 @@
         function scrollToCard(index) {
             const cardWidth = cards.children[0].offsetWidth;
             const scrollPosition = index * (cardWidth + 16); // 16px for gap
-            cards.style.transform = `translateX(-${scrollPosition}px)`;
+            cards.scrollTo({ left: scrollPosition, behavior: 'smooth' });
             updateTimelineProgress(index);
+            highlightCard(index);
         }
 
         function updateTimelineProgress(index) {
@@ -702,36 +730,26 @@
             timelineProgress.style.width = `${progress}%`;
         }
 
+        function highlightCard(index) {
+            const cardElements = cards.children;
+            for (let i = 0; i < cardElements.length; i++) {
+                cardElements[i].classList.remove('highlighted');
+            }
+            cardElements[index].classList.add('highlighted');
+        }
+
         createTimelineMarkers();
 
         // Initialize timeline progress
         updateTimelineProgress(0);
 
-        // Add drag functionality to the timeline
-        let isDragging = false;
-        let startX, startScrollLeft;
-
-        timelineMarkers.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - timelineMarkers.offsetLeft;
-            startScrollLeft = cards.scrollLeft;
-        });
-
-        timelineMarkers.addEventListener('mouseleave', () => {
-            isDragging = false;
-        });
-
-        timelineMarkers.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        timelineMarkers.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - timelineMarkers.offsetLeft;
-            const walk = (x - startX) * 2;
-            const index = Math.round(walk / (cards.children[0].offsetWidth + 16));
-            scrollToCard(Math.max(0, Math.min(achievements.length - 1, index)));
+        // Update progress on scroll
+        cards.addEventListener('scroll', () => {
+            const scrollPosition = cards.scrollLeft;
+            const cardWidth = cards.children[0].offsetWidth;
+            const index = Math.round(scrollPosition / (cardWidth + 16));
+            updateTimelineProgress(index);
+            highlightCard(index);
         });
     </script>
 </body>
