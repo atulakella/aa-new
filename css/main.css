@@ -1638,19 +1638,26 @@ section { position: relative; }
 
 /* projects: "More on GitHub" card (was inline styles + JS handlers) */
 .proj-card--github {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-decoration: none;
   cursor: pointer;
+  background: var(--copper-pale);
+  border-color: rgba(184,115,51,0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .proj-card--github:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg, var(--shadow-md));
+  border-color: rgba(184,115,51,0.6);
 }
-.proj-card--github .proj-body { font-size: 1.08em; }
-.proj-card--github .proj-name { font-size: 1.18em; }
-.proj-card--github .proj-desc { font-size: 1.08em; }
-.proj-card--github .proj-link { font-size: 1.05em; }
+.proj-card--github .proj-card-top { border-bottom-color: rgba(184,115,51,0.15); }
+.proj-card--github .proj-footer   { border-top-color:    rgba(184,115,51,0.15); }
+.proj-card--github .proj-name  { color: var(--navy); }
+.proj-card--github .proj-desc  { color: var(--text-mid); }
+.proj-card--github .proj-link  { color: var(--copper); }
+.proj-card--github .proj-link:hover { color: var(--navy); }
 
 /* disabled / informational project link (was inline styles) */
 .proj-link--muted {
