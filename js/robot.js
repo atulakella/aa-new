@@ -84,13 +84,13 @@
     btext.textContent = messages[msgIndex % messages.length];
     msgIndex++;
     bubble.classList.add('is-visible');
-    setTimeout(function () { bubble.classList.remove('is-visible'); }, 3000);
+    setTimeout(function () { bubble.classList.remove('is-visible'); }, 5500);
   }
   function scheduleMsg() {
     setTimeout(function () {
       if (Math.random() < 0.7) showMsg();   // occasionally — never spam
       scheduleMsg();
-    }, rand(6000, 9000));
+    }, rand(3500, 6000));
   }
 
   /* ---- motion tuning ----------------------------------------------- */
