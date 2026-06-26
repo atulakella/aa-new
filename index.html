@@ -133,7 +133,7 @@
         </svg>
       </div>
 
-      <p class="s-intro__content-pretitle hero-anim hero-anim-1">Available for Internships</p>
+      <p class="s-intro__content-pretitle hero-anim hero-anim-1">Open to Full-Time Roles · Graduating 2027</p>
 
       <h1 class="s-intro__content-title hero-anim hero-anim-2">
         I build things<br>
@@ -146,7 +146,7 @@
       </h1>
 
       <p class="s-intro__tagline hero-anim hero-anim-3">
-        Final-year Electronics and Communications Engineering student at VIT-AP. I buildv embedded firmware, linux drivers, and hardware accelerators. Most problems get interesting when you stop trusting the abstraction.
+        Final-year Electronics and Communications Engineering student at VIT-AP, graduating 2027. I build embedded firmware, Linux drivers, and hardware accelerators. Most problems get interesting when you stop trusting the abstraction.
       </p>
 
       <div class="s-intro__content-btns hero-anim hero-anim-4">
@@ -233,7 +233,7 @@
               <span class="skill-chip">OpenAMP</span>
               <span class="skill-chip">RPMsg</span>
               <span class="skill-chip">Embedded Linux</span>
-              <span class="skill-chip">ARM Cortex-M4 / A9</span>
+              <span class="skill-chip">ARM Cortex-M4 / A7</span>
             </div>
           </div>
 
@@ -306,9 +306,9 @@
           <span class="exp-tag">Hardware</span>
         </div>
         <ul class="exp-bullets">
-          <li>Built a simplex FSO data link from scratch. Custom UART framing with byte stuffing, NRZ encoding, and multi-protocol input bridging across I2C, UART, SPI, RJ45, and RS232.</li>
-          <li>Got reliable text and image transmission over a free-space laser link. Documented signal recovery pipeline built on raw photodetector output.</li>
-          <li>Designed the full-duplex extension path: link-layer ACK/NAK retransmission, framing protocol, and tested over actual free-space propagation.</li>
+          <li>Built a simplex FSO data link from scratch: custom UART framing with byte stuffing, NRZ encoding, and multi-protocol input bridging across I2C, UART, SPI, RJ45, and RS232 on a single transmitter node.</li>
+          <li>Achieved reliable text and image transmission over a free-space laser link. Signal recovery pipeline built directly on raw photodetector output with no off-the-shelf modem layer.</li>
+          <li>Designed the full-duplex extension path: link-layer ACK/NAK retransmission, framing protocol, and end-to-end testing over actual free-space propagation distance.</li>
         </ul>
       </div>
 
@@ -321,8 +321,8 @@
           <span class="exp-tag">Edge ML | Computer Vision</span>
         </div>
         <ul class="exp-bullets">
-          <li>Benchmarked YOLOv8, DETR, and SAM on aquaculture field data for shrimp defect detection. +6% mAP over the existing baseline.</li>
-          <li>Optimised the classification pipeline for edge deployment and validated it across multiple architectures on real field data.</li>
+          <li>Benchmarked YOLOv8-nano, DETR, and SAM on aquaculture field data for shrimp defect detection. Achieved +6% mAP over the YOLOv8-nano baseline on real production images.</li>
+          <li>Optimized the classification pipeline for edge deployment: quantization, pruning, and operator fusion. Validated across ARM Cortex-A and MCU-class targets on real field data.</li>
         </ul>
       </div>
 
@@ -346,7 +346,7 @@
         <h2 class="section-heading reveal">
           Things I've built.
         </h2>
-        <p class="reveal">Hardware, firmware, and ML. Somethimes all three at once.</p>
+        <p class="reveal">Hardware, firmware, and ML. Sometimes all three at once.</p>
       </div>
     </div>
 
@@ -360,16 +360,16 @@
         <div class="proj-body">
           <div class="proj-name">Real-Tim Shady</div>
           <p class="proj-desc">
-            A chip with two processors inside needs both of them talking to each other reliably.
-            This project brings up both cores on an STM32MP157 from scratch, runs a real-time control
-            loop on one and Linux on the other, and studies exactly how fast they can pass messages
-            and what slows that down. The application running on top is a 1 kHz adaptive PID control loop..
+            Full heterogeneous SoC bring-up from scratch on the STM32MP157D. Custom Yocto BSP layer (meta-motorcontrol, Scarthgap), PREEMPT_RT Linux 6.6.116-rt66 on the Cortex-A7, FreeRTOS 1kHz PID loop on the Cortex-M4, bidirectional RPMsg IPC over OpenAMP, and a custom kernel module exposing /dev/daq0 (telemetry) and /dev/daq1 (gain commands). IPC latency characterized across 80,000 samples and 8 load conditions: mean 58us, P99 grows 57x under CPU saturation, governor-invariant, payload-size invariant up to 256B.
           </p>
           <div class="proj-metrics">
-            <span class="proj-metric">STM32MP157</span>
-            <span class="proj-metric">Embedded Linux</span>
-            <span class="proj-metric">FreeRTOS</span>
-            <span class="proj-metric">Custom Linux driver</span>
+            <span class="proj-metric">STM32MP157D</span>
+            <span class="proj-metric">Yocto BSP</span>
+            <span class="proj-metric">PREEMPT_RT Linux 6.6</span>
+            <span class="proj-metric">FreeRTOS 1kHz</span>
+            <span class="proj-metric">Custom kernel module</span>
+            <span class="proj-metric">P99 57x under load</span>
+            <span class="proj-metric">80K samples</span>
           </div>
         </div>
         <div class="proj-footer">
@@ -388,10 +388,7 @@
         <div class="proj-body">
           <div class="proj-name">CNN Inference Accelerator</div>
           <p class="proj-desc">
-            Running a neural network on a chip that has both a processor and programmable logic on it.
-            The processor handles setup and results; the programmable logic does the heavy math in parallel.
-            I wrote the hardware description for the convolution layer myself and optimised it until
-            it ran 2.67x faster than doing the same thing purely in software, while using a fifth of the chip resources.
+            Custom convolution accelerator on a Zynq-7000, using Vitis HLS and AXI4 streaming between PS and PL. I wrote the HLS kernel for the convolution layer, optimized the dataflow and loop unrolling until throughput was 2.67x that of a software-only baseline running on the Cortex-A9 PS, at 1421 inferences/sec, while consuming 5x fewer DSP48 blocks than an unoptimized HLS reference design.
           </p>
           <div class="proj-metrics">
             <span class="proj-metric">Zynq-7000 FPGA</span>
@@ -557,6 +554,12 @@
 
         <div class="card">
           <div class="card-age-badge">Age 20</div>
+          <h2>Two IEEE publications</h2>
+          <p>First-authored two IEEE conference papers on embedded ML and hardware-software co-design. Peer-reviewed, cited work in the embedded systems research community.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-age-badge">Age 20</div>
           <h2>₹14L MSME Grant, Govt. of India</h2>
           <p>Government innovation grant for CogniLift, a neurofeedback-based brain activity monitoring and therapy device. First time building something at the brain-computer interface, and the first time someone external put money behind the direction.</p>
         </div>
@@ -598,6 +601,7 @@ If your hardware occasionally refuses to cooperate, there's a good chance we'll 
         </p>
         <div class="footer-links-label">Direct links</div>
         <ul class="footer-link-list">
+          <li><a href="mailto:atulakella2@gmail.com">atulakella2@gmail.com</a></li>
           <li><a href="https://heyatul.xyz" target="_blank" rel="noopener">heyatul.xyz</a></li>
           <li><a href="https://github.com/atulakella" target="_blank" rel="noopener">github.com/atulakella</a></li>
           <li><a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener">linkedin.com/in/atulakella</a></li>
@@ -617,6 +621,7 @@ If your hardware occasionally refuses to cooperate, there's a good chance we'll 
         <div>
           <h5 class="footer-links-label">Contact</h5>
           <ul class="link-list">
+            <li><a href="mailto:atulakella2@gmail.com">atulakella2@gmail.com</a></li>
             <li><a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener">Message on LinkedIn</a></li>
             <li><a href="https://heyatul.xyz" target="_blank" rel="noopener">heyatul.xyz</a></li>
           </ul>

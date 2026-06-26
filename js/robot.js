@@ -79,18 +79,34 @@
   "one message. that's all it takes."
 ];
   var msgIndex = Math.floor(Math.random() * messages.length);
+  var bubbleVisible = false;
+  var msgScheduled = false;
+
+  var SHOW_DURATION = 5500;   /* ms the bubble stays visible */
+  var MIN_INTERVAL  = 4000;   /* ms minimum gap between shows */
+  var MAX_INTERVAL  = 7000;   /* ms maximum gap between shows */
+
+  function hideBubble() {
+    bubble.classList.remove('is-visible');
+    bubbleVisible = false;
+    scheduleMsg();
+  }
 
   function showMsg() {
+    msgScheduled = false;
+    if (bubbleVisible) { scheduleMsg(); return; }
     btext.textContent = messages[msgIndex % messages.length];
     msgIndex++;
+    bubbleVisible = true;
     bubble.classList.add('is-visible');
-    setTimeout(function () { bubble.classList.remove('is-visible'); }, 5500);
+    setTimeout(hideBubble, SHOW_DURATION);
   }
+
   function scheduleMsg() {
-    setTimeout(function () {
-      if (Math.random() < 0.7) showMsg();   // occasionally — never spam
-      scheduleMsg();
-    }, rand(3500, 6000));
+    if (msgScheduled || bubbleVisible) return;
+    msgScheduled = true;
+    var delay = MIN_INTERVAL + Math.random() * (MAX_INTERVAL - MIN_INTERVAL);
+    setTimeout(showMsg, delay);
   }
 
   /* ---- motion tuning ----------------------------------------------- */
@@ -221,6 +237,5 @@
   }
 
   scheduleMsg();
-  setTimeout(showMsg, 2200);
   requestAnimationFrame(frame);
 })();
