@@ -7,55 +7,128 @@
   const timelineMarkersEl = document.getElementById('timelineMarkers');
   if (!cards || !timelineProgress || !timelineMarkersEl) return;
 
-  const items = [
-    { age: 13 }, { age: 14 }, { age: 15 }, { age: 19 }, { age: 20 }
-  ];
+  const cardEls = Array.from(cards.children);
+  const markerWraps = [];
+
+  // Give each card a stable id so its marker button can reference it
+  // via aria-controls, tying the two together for screen readers too.
+  cardEls.forEach((cardEl, i) => {
+    if (!cardEl.id) cardEl.id = `achievement-card-${i}`;
+  });
+
+  // Derive ages straight from the cards in the DOM, rather than a
+  // hand-maintained list that silently drifts out of sync.
+  function ageFor(cardEl) {
+    const badge = cardEl.querySelector('.card-age-badge');
+    return badge ? badge.textContent.replace(/^Age\s*/i, '').trim() : '';
+  }
 
   function createMarkers() {
-    items.forEach((item, index) => {
+    cardEls.forEach((cardEl, index) => {
       const wrap = document.createElement('div');
-      const marker = document.createElement('div');
-      const label = document.createElement('div');
+      wrap.classList.add('timeline-marker-wrap');
+
+      // Real <button>s, each pointing at its achievement card, so the
+      // dot is an actual control (keyboard-focusable, announced by
+      // screen readers, clickable target) rather than a decorative div.
+      const marker = document.createElement('button');
+      marker.type = 'button';
       marker.classList.add('timeline-marker');
+      marker.setAttribute('aria-controls', cardEl.id);
+      marker.setAttribute('aria-label', `Jump to age ${ageFor(cardEl)} achievement`);
+
+      const label = document.createElement('button');
+      label.type = 'button';
       label.classList.add('timeline-label');
-      label.textContent = `Age ${item.age}`;
-      marker.addEventListener('click', () => scrollToCard(index));
+      label.textContent = `Age ${ageFor(cardEl)}`;
+      label.setAttribute('aria-controls', cardEl.id);
+
+      const jump = () => scrollToCard(index);
+      marker.addEventListener('click', jump);
+      label.addEventListener('click', jump);
+
       wrap.appendChild(marker);
       wrap.appendChild(label);
       timelineMarkersEl.appendChild(wrap);
+      markerWraps.push(wrap);
     });
   }
 
   function scrollToCard(index) {
     const cardEl = cards.children[index];
     if (!cardEl) return;
-    cards.scrollTo({ left: cardEl.offsetLeft - 16, behavior: 'smooth' });
-    updateProgress(index);
-    highlightCard(index);
+    const isLast = index === cardEls.length - 1;
+    const maxScroll = cards.scrollWidth - cards.clientWidth;
+    // getBoundingClientRect is used instead of offsetLeft because
+    // offsetLeft is relative to the nearest *positioned* ancestor
+    // (here, .timeline-container), not necessarily .cards itself —
+    // that mismatch was causing clicks to land on the wrong card.
+    const target = isLast
+      ? maxScroll
+      : cards.scrollLeft + (cardEl.getBoundingClientRect().left - cards.getBoundingClientRect().left);
+    cards.scrollTo({ left: Math.max(0, Math.min(maxScroll, target)), behavior: 'smooth' });
   }
 
-  function updateProgress(index) {
-    const pct = items.length > 1 ? (index / (items.length - 1)) * 100 : 0;
-    timelineProgress.style.width = pct + '%';
+  // Real scroll-ratio progress, so the bar always reaches exactly 0–100%
+  // regardless of card width, gap, or how many cards there are.
+  function updateProgress() {
+    const maxScroll = cards.scrollWidth - cards.clientWidth;
+    const pct = maxScroll > 0 ? (cards.scrollLeft / maxScroll) * 100 : 100;
+    timelineProgress.style.width = Math.min(100, Math.max(0, pct)) + '%';
   }
 
-  function highlightCard(index) {
-    Array.from(cards.children).forEach((c, i) => {
-      c.classList.toggle('highlighted', i === index);
+  // Nearest-card lookup by actual on-screen position (not offsetLeft,
+  // which is relative to the nearest positioned ancestor and doesn't
+  // line up with .cards' own scroll coordinates).
+  function activeIndex() {
+    const maxScroll = cards.scrollWidth - cards.clientWidth;
+    if (maxScroll <= 0) return 0;
+    if (cards.scrollLeft >= maxScroll - 1) return cardEls.length - 1;
+    if (cards.scrollLeft <= 1) return 0;
+    const containerLeft = cards.getBoundingClientRect().left;
+    let closest = 0;
+    let closestDiff = Infinity;
+    cardEls.forEach((c, i) => {
+      const diff = Math.abs(c.getBoundingClientRect().left - containerLeft);
+      if (diff < closestDiff) { closestDiff = diff; closest = i; }
+    });
+    return closest;
+  }
+
+  function highlightActive() {
+    const idx = activeIndex();
+    cardEls.forEach((c, i) => c.classList.toggle('highlighted', i === idx));
+    markerWraps.forEach((wrap, i) => {
+      const marker = wrap.querySelector('.timeline-marker');
+      const label = wrap.querySelector('.timeline-label');
+      const isActive = i === idx;
+      marker.classList.toggle('active', isActive);
+      label.classList.toggle('active', isActive);
+      if (isActive) {
+        marker.setAttribute('aria-current', 'true');
+      } else {
+        marker.removeAttribute('aria-current');
+      }
     });
   }
 
-  cards.addEventListener('scroll', () => {
-    if (!cards.children[0]) return;
-    const cardW = cards.children[0].offsetWidth + 16;
-    const idx = Math.round(cards.scrollLeft / cardW);
-    updateProgress(idx);
-    highlightCard(idx);
-  });
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateProgress();
+      highlightActive();
+      ticking = false;
+    });
+  }
+
+  cards.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
 
   createMarkers();
-  updateProgress(0);
-  highlightCard(0);
+  updateProgress();
+  highlightActive();
 })();
 
 /* ───────────────────────────���──���───────────��──

@@ -1319,7 +1319,10 @@ section { position: relative; }
   overflow-x: auto;
   padding: 0.5rem 0.25rem 1.25rem;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  /* proximity (not mandatory) so free scrolling/dragging stays fluid —
+     it only settles onto a card when you're already close to one,
+     instead of yanking the view on every wheel/touch tick */
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
 }
 .cards::-webkit-scrollbar { height: 4px; }
@@ -1345,6 +1348,11 @@ section { position: relative; }
   border-color: var(--copper);
   box-shadow: 0 0 0 2px rgba(184,115,51,0.15), var(--shadow-md);
   transform: scale(1.02);
+}
+.card.highlighted .card-age-badge {
+  background: var(--copper);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(184,115,51,0.5);
 }
 .card h2 {
   font-family: var(--font-display);
@@ -1396,18 +1404,42 @@ section { position: relative; }
   justify-content: space-between;
   margin-top: 0.6rem;
 }
+.timeline-marker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .timeline-marker {
   width: 10px; height: 10px;
   background: var(--cream-deeper);
   border: 2px solid var(--border-mid);
   border-radius: 50%;
   cursor: pointer;
-  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.timeline-marker:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 4px;
 }
 .timeline-marker:hover {
   transform: scale(1.5);
   background: var(--copper);
   border-color: var(--copper);
+}
+/* Glowing "active" marker, synced to whichever card is centred in view */
+.timeline-marker.active {
+  background: var(--copper);
+  border-color: var(--copper);
+  transform: scale(1.5);
+  animation: timelineMarkerPulse 1.8s ease-in-out infinite;
+}
+@keyframes timelineMarkerPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(184,115,51,0.16), 0 0 10px 2px rgba(184,115,51,0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(184,115,51,0.1),  0 0 18px 5px rgba(184,115,51,0.65); }
 }
 .timeline-label {
   font-family: var(--font-mono);
@@ -1415,10 +1447,24 @@ section { position: relative; }
   color: var(--text-faint);
   text-align: center;
   margin-top: 0.3rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+.timeline-label.active {
+  color: var(--copper);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(184,115,51,0.4);
 }
 
 @media (max-width: 600px) {
   .card { flex: 0 0 260px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-marker.active { animation: none; box-shadow: 0 0 0 4px rgba(184,115,51,0.16), 0 0 10px 2px rgba(184,115,51,0.4); }
 }
 
 /* =============================================
