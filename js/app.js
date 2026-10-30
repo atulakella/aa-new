@@ -5,6 +5,8 @@
   const cards = document.getElementById('cards');
   const timelineProgress = document.getElementById('timelineProgress');
   const timelineMarkersEl = document.getElementById('timelineMarkers');
+  const cardsScrollbar = document.getElementById('cardsScrollbar');
+  const cardsScrollbarThumb = document.getElementById('cardsScrollbarThumb');
   if (!cards || !timelineProgress || !timelineMarkersEl) return;
 
   const cardEls = Array.from(cards.children);
@@ -59,13 +61,10 @@
     if (!cardEl) return;
     const isLast = index === cardEls.length - 1;
     const maxScroll = cards.scrollWidth - cards.clientWidth;
-    // getBoundingClientRect is used instead of offsetLeft because
-    // offsetLeft is relative to the nearest *positioned* ancestor
-    // (here, .timeline-container), not necessarily .cards itself —
-    // that mismatch was causing clicks to land on the wrong card.
-    const target = isLast
-      ? maxScroll
-      : cards.scrollLeft + (cardEl.getBoundingClientRect().left - cards.getBoundingClientRect().left);
+    // Use the layout position rather than the viewport position so the
+    // highlighted card's visual scale transform cannot affect the target.
+    const cardContentLeft = cardEl.offsetLeft - cards.offsetLeft;
+    const target = isLast ? maxScroll : cardContentLeft;
     cards.scrollTo({ left: Math.max(0, Math.min(maxScroll, target)), behavior: 'smooth' });
   }
 
@@ -75,6 +74,39 @@
     const maxScroll = cards.scrollWidth - cards.clientWidth;
     const pct = maxScroll > 0 ? (cards.scrollLeft / maxScroll) * 100 : 100;
     timelineProgress.style.width = Math.min(100, Math.max(0, pct)) + '%';
+
+    if (cardsScrollbar && cardsScrollbarThumb) {
+      const thumbTravel = cardsScrollbar.clientWidth - cardsScrollbarThumb.offsetWidth;
+      cardsScrollbarThumb.style.transform = `translateX(${thumbTravel * (maxScroll > 0 ? cards.scrollLeft / maxScroll : 0)}px)`;
+      cardsScrollbar.setAttribute('aria-valuenow', Math.round(pct));
+    }
+  }
+
+  if (cardsScrollbar && cardsScrollbarThumb) {
+    const scrollFromPointer = (clientX) => {
+      const rect = cardsScrollbar.getBoundingClientRect();
+      const thumbWidth = cardsScrollbarThumb.offsetWidth;
+      const ratio = Math.max(0, Math.min(1, (clientX - rect.left - thumbWidth / 2) / (rect.width - thumbWidth)));
+      cards.scrollLeft = ratio * (cards.scrollWidth - cards.clientWidth);
+    };
+
+    cardsScrollbar.addEventListener('pointerdown', (event) => {
+      event.preventDefault();
+      cardsScrollbar.setPointerCapture(event.pointerId);
+      cardsScrollbarThumb.classList.add('dragging');
+      scrollFromPointer(event.clientX);
+    });
+    cardsScrollbar.addEventListener('pointermove', (event) => {
+      if (cardsScrollbar.hasPointerCapture(event.pointerId)) scrollFromPointer(event.clientX);
+    });
+    cardsScrollbar.addEventListener('pointerup', (event) => {
+      cardsScrollbar.releasePointerCapture(event.pointerId);
+      cardsScrollbarThumb.classList.remove('dragging');
+    });
+    cardsScrollbar.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') cards.scrollBy({ left: -cards.clientWidth * 0.2, behavior: 'smooth' });
+      if (event.key === 'ArrowRight') cards.scrollBy({ left: cards.clientWidth * 0.2, behavior: 'smooth' });
+    });
   }
 
   // Nearest-card lookup by actual on-screen position (not offsetLeft,
