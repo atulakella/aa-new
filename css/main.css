@@ -1299,7 +1299,7 @@ section { position: relative; }
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.9;
+  opacity: 1;
   pointer-events: none;
   background-image:
     linear-gradient(rgba(15,31,61,0.055) 1px, transparent 1px),
