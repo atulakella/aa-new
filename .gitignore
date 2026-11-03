@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+data/lore.json
+data/lore-test.mbox
+data/github.json
+data/lore-contributions.json
+data/discovered-commits.json

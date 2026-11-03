@@ -1,0 +1,8 @@
+{
+  "d5691858e4ea522b088ee34137bf79de6f933baf": {
+    "repository": "torvalds/linux",
+    "commit": "7dd4cffdf4c2a496ccf783303a03d687a2127baf",
+    "url": "https://github.com/torvalds/linux/commit/7dd4cffdf4c2a496ccf783303a03d687a2127baf",
+    "patch_id": "d5691858e4ea522b088ee34137bf79de6f933baf"
+  }
+}
