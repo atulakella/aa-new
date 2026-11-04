@@ -5,6 +5,7 @@ import json
 import mailbox
 import subprocess
 import sys
+import tempfile
 
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -142,10 +143,26 @@ def main() -> int:
             "messages": messages,
         }
 
-        args.output.write_text(
-            json.dumps(result, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
+        temp_path = None
+
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                encoding="utf-8",
+                dir=args.output.parent,
+                prefix=f".{args.output.name}.",
+                suffix=".tmp",
+                delete=False,
+            ) as temp_file:
+                temp_path = Path(temp_file.name)
+                json.dump(result, temp_file, indent=2, ensure_ascii=False)
+                temp_file.write("\n")
+
+            temp_path.replace(args.output)
+
+        finally:
+            if temp_path and temp_path.exists():
+                temp_path.unlink()
 
         print(f"Collected {len(messages)} unique messages.")
         print(f"Saved to {args.output}")

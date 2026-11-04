@@ -8,6 +8,7 @@ import urllib.parse
 import urllib.request
 import tempfile
 import os
+import sys
 
 from datetime import datetime, timezone
 from pathlib import Path
@@ -92,14 +93,7 @@ def find_upstream_commit(repository, patch):
 
     print(f"  Searching: {subject}")
 
-    try:
-        results = json.loads(github_request(url))
-    except urllib.error.HTTPError as error:
-        print(f"  GitHub search failed: HTTP {error.code}")
-        return None
-    except Exception as error:
-        print(f"  Search error: {error}")
-        return None
+    results = json.loads(github_request(url))
 
     for candidate in results.get("items", []):
         sha = candidate["sha"]
@@ -112,12 +106,7 @@ def find_upstream_commit(repository, patch):
             f"https://github.com/{repository}/commit/{sha}.patch"
         )
 
-        try:
-            candidate_patch = github_request(patch_url).decode("utf-8")
-        except Exception as error:
-            print(f"  Could not download {sha}: {error}")
-            continue
-
+        candidate_patch = github_request(patch_url).decode("utf-8")
         candidate_id = get_patch_id(candidate_patch)
 
         if candidate_id != patch["patch_id"]:
@@ -230,4 +219,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (urllib.error.URLError, TimeoutError, OSError,
+            json.JSONDecodeError, KeyError, TypeError, ValueError) as error:
+        print(f"Upstream verification failed: {error}", file=sys.stderr)
+        raise SystemExit(1)

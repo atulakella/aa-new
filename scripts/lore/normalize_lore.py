@@ -3,6 +3,7 @@
 import json
 import re
 import subprocess
+import tempfile
 
 from collections import defaultdict
 from email.utils import parseaddr
@@ -213,10 +214,26 @@ def main():
         "contributions": contributions,
     }
 
-    OUTPUT.write_text(
-        json.dumps(result, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    temp_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=OUTPUT.parent,
+            prefix=f".{OUTPUT.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as temp_file:
+            temp_path = Path(temp_file.name)
+            json.dump(result, temp_file, indent=2, ensure_ascii=False)
+            temp_file.write("\n")
+
+        temp_path.replace(OUTPUT)
+
+    finally:
+        if temp_path and temp_path.exists():
+            temp_path.unlink()
 
     print(f"Generated {len(contributions)} contributions.")
     print(f"Saved to {OUTPUT}")
