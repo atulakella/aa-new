@@ -62,6 +62,7 @@
       <li><a class="smoothscroll" href="#projects">Projects</a></li>
       <li><a class="smoothscroll" href="#Things">Achievements</a></li>
       <li><a class="smoothscroll" href="#blog">Blog</a></li>
+      <li><a href="contributions.html">Lore</a></li>
       <li class="nav-cta"><a class="smoothscroll" href="#footer">Contact</a></li>
     </ul>
   </nav>
@@ -162,13 +163,14 @@
            srcset="images/about.webp 1x, images/about.webp 2x"
            alt="Atul Akella">
 
-      <div class="hero-badge hero-badge-anim">
+      <a class="hero-badge hero-badge-anim" href="contributions.html" aria-label="Read the latest Lore contribution">
         <div class="hero-badge__label">
-          <span class="hero-badge__pulse" aria-hidden="true"></span>
-          Currently on workbench
+          <span class="hero-badge__pulse hero-badge__pulse--live" aria-hidden="true"></span>
+          Latest Lore
         </div>
-        <div class="hero-badge__role">Embedded Linux <span class="hero-badge__pipe">|</span> Firmware Dev</div>
-      </div>
+        <div id="latest-contribution" class="hero-badge__role">Loading contribution feed…</div>
+        <span class="hero-badge__link">Read the contribution log →</span>
+      </a>
     </div>
   </div>
 
@@ -194,7 +196,7 @@
       <span class="eyebrow-text">About Me</span>
     </div>
 
-    <h2 class="about-heading reveal">
+    <h2 class="section-heading reveal">
       I go lower<br>until things make sense.
     </h2>
 
@@ -522,7 +524,7 @@
         <span class="section-num">04</span>
         <span class="eyebrow-text">Achievements</span>
       </div>
-      <h2 class="reveal">A few things<br>worth noting.</h2>
+      <h2 class="section-heading reveal">A few things<br>worth noting.</h2>
     </div>
 
     <div class="achievement-scroll-note reveal" aria-hidden="true">
@@ -893,5 +895,6 @@ If your hardware occasionally refuses to cooperate, there's a good chance we'll 
 <script src="js/main.js"></script>
 <script src="js/app.js"></script>
 <script src="js/robot.js"></script>
+<script src="js/contributions.js"></script>
 </body>
 </html>

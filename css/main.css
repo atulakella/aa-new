@@ -435,6 +435,57 @@ section { position: relative; }
   }
 }
 
+/* =============================================
+   OPEN SOURCE CONTRIBUTIONS
+   ============================================= */
+.hero-badge__link { display: inline-block; margin-top: .45rem; color: var(--copper); font: 500 10px/1.3 var(--font-mono); letter-spacing: .03em; }
+.hero-badge__role small { font-size: .82em; color: var(--text-light); }
+.hero-badge__role { font-family: var(--font-body); font-size: .88rem; font-weight: 500; white-space: normal; max-width: 280px; }
+.hero-badge__pulse--live { background: #4d9b59 !important; box-shadow: 0 0 0 0 rgba(77,155,89,.55); }
+.hero-badge__pulse--live { animation: liveBadgePulse 1.8s ease-out infinite !important; }
+@keyframes liveBadgePulse { 0% { box-shadow: 0 0 0 0 rgba(77,155,89,.55); } 70% { box-shadow: 0 0 0 7px rgba(77,155,89,0); } 100% { box-shadow: 0 0 0 0 rgba(77,155,89,0); } }
+.hero-badge__pulse--live { background: #4d9b59; box-shadow: 0 0 0 0 rgba(77,155,89,.55); }
+.hero-badge:hover { border-color: #4d9b59; transform: translateY(-2px); }
+.contributions-page { padding: 9rem 0 6rem; min-height: 100vh; }
+.contributions-header { max-width: 900px; margin-bottom: 1.25rem; }
+.contributions-header h2 { font: 600 clamp(2.3rem, 5vw, 4rem)/1.05 var(--font-display); letter-spacing: -.04em; margin: 1rem 0; }
+.contributions-header p { max-width: 820px; color: var(--text-mid); font-size: 1.05rem; }
+.contributions-live { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1.2rem; color: var(--text-light); font: 500 10px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.contributions-live__dot { width: 7px; height: 7px; border-radius: 50%; background: #4d9b59; box-shadow: 0 0 0 0 rgba(77,155,89,.55); animation: contributionsLivePulse 1.8s ease-out infinite; }
+@keyframes contributionsLivePulse { 0% { box-shadow: 0 0 0 0 rgba(77,155,89,.55); } 70% { box-shadow: 0 0 0 7px rgba(77,155,89,0); } 100% { box-shadow: 0 0 0 0 rgba(77,155,89,0); } }
+.contributions-controls { display: flex; gap: .8rem; align-items: end; flex-wrap: wrap; padding: 1rem 0 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.contributions-control { display: grid; gap: .35rem; color: var(--text-light); font: 500 10px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.contributions-control select { min-width: 170px; padding: .65rem .8rem; border: 1px solid var(--border-mid); border-radius: var(--radius); background: var(--cream); color: var(--text-dark); font: 400 13px var(--font-body); }
+#contribution-count { margin-left: auto; color: var(--text-light); font: 400 12px var(--font-mono); }
+.contributions-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2rem; }
+.contribution-card { background: var(--cream); padding: 1.5rem; }
+.contribution-card__top, .contribution-meta { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.contribution-project { color: var(--copper); font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+.contribution-status { padding: .25rem .5rem; border-radius: 99px; font: 500 10px var(--font-mono); }
+.contribution-status--under_review { background: var(--copper-pale); color: #8a5527; }
+.contribution-status--maintainer_applied { background: #e5edf2; color: var(--navy-mid); }
+.contribution-status--upstream { background: #e2eee3; color: #35633a; }
+.contribution-card h3 { max-width: 760px; margin: .75rem 0; font: 500 1.25rem/1.35 var(--font-display); }
+.contributions-page h1, .contributions-page h3 { font-family: var(--font-display); }
+.contribution-meta { color: var(--text-light); font: 400 11px var(--font-mono); }
+.contribution-links { margin-top: 1.1rem; color: var(--copper); font-size: 12px; }
+.contribution-links a:hover { color: var(--navy); }
+.contributions-empty { padding: 2rem; color: var(--text-mid); }
+.contributions-page { position: relative; isolation: isolate; background: #0f1f3d; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(135deg, transparent 49.7%, rgba(184,115,51,.055) 50%, transparent 50.3%); background-size: 42px 42px, 42px 42px, 180px 180px; }
+.contributions-page .contributions-header h2, .contributions-page .eyebrow-text, .contributions-page .section-num { color: #fffaf0; }
+.contributions-page .section-num { border-color: rgba(224,184,115,.55); }
+.contributions-page .contributions-header p, .contributions-page .contributions-live { color: rgba(255,255,255,.68); }
+.contributions-page .contributions-controls { border-color: rgba(255,255,255,.2); }
+.contributions-page .contribution-card { background: var(--cream); border-radius: var(--radius-lg); margin: .6rem; box-shadow: var(--shadow-md); transition: transform var(--transition), box-shadow var(--transition); cursor: pointer; }
+.contributions-page .contribution-card:focus-visible { outline: 2px solid var(--copper-light); outline-offset: -4px; }
+.contributions-page .contribution-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.contributions-page .contributions-list { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.18); }
+.contributions-page .contributions-list { background: transparent; border: 0; }
+.hero-badge__role { width: min(280px, 100%); overflow-wrap: anywhere; word-break: break-word; }
+.hero-badge__role { font-family: var(--font-body); font-size: .88rem; font-weight: 500; white-space: normal; max-width: 280px; }
+@media (max-width: 760px) { .contributions-list { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .contributions-page { padding-top: 7rem; } #contribution-count { width: 100%; margin-left: 0; } .contribution-card { padding: 1.2rem; } }
+
 
 .s-intro__content-text {
   padding: 5rem 3rem 5rem 3rem;
@@ -920,15 +971,20 @@ section { position: relative; }
 #about .eyebrow-text { color: var(--copper-light); }
 #about .section-num { color: rgba(255,255,255,0.25); }
 
-.about-heading {
-  font-family: var(--font-body);
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  font-weight: 800;
-  color: #fff;
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--navy);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem;
   max-width: 640px;
+}
+
+#about .section-heading {
+  color: #fff;
+  padding-bottom: 0.95rem;
 }
 
 /* Two-column: story left, baskets right */
@@ -2090,4 +2146,18 @@ section { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   #bot-body, #bot-head, #bot-antenna, #bot-eyes,
   #bot-pupil-l, #bot-pupil-r { transform: none !important; }
+}
+
+/* Final overrides for the live Lore badge. */
+.hero-badge__role { width: min(280px, 100%); max-width: 280px; white-space: normal; overflow-wrap: anywhere; word-break: break-word; font-family: var(--font-body); font-size: .88rem; font-weight: 500; }
+.hero-badge__pulse--live { background: #4d9b59 !important; animation: liveBadgePulse 1.8s ease-out infinite !important; }
+
+/* Keep the primary homepage section headings visually identical. */
+.about-heading,
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }

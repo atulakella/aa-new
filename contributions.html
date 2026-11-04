@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lore · Atul Akella</title>
+  <meta name="description" content="Atul Akella's open source contributions across Linux, U-Boot, and OpenAMP.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-contributions-path="data/contributions.json">
+  <header class="s-header">
+    <div class="s-header__block"><div class="s-header__logo"><a class="logo" href="index.html">Atul<span>.</span></a></div><button class="s-header__menu-toggle" aria-label="Toggle menu"><span></span></button></div>
+  <nav class="s-header__nav">
+      <ul class="s-header__menu-links">
+        <li><a href="index.html#intro">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#Things">Achievements</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li class="current"><a href="contributions.html">Lore</a></li>
+        <li class="nav-cta"><a href="index.html#footer">Contact</a></li>
+      </ul>
+    </nav>
+    </header>
+
+  <main class="contributions-page"><div class="container">
+    <div class="contributions-header">
+      <div class="section-eyebrow"><span class="section-num">007</span><span class="eyebrow-text">Lore</span></div>
+      <h2>Upstream contributions</h2>
+      <p>A log of patches and pull requests I've been working on across Linux, U-Boot, and OpenAMP.</p>
+      <p>Some are still under review, some have been picked up by maintainers, and others have made it upstream. This is where I keep track of them.</p>
+      <div class="contributions-live"><span class="contributions-live__dot" aria-hidden="true"></span><span id="contributions-live-label">Live feed · checking for updates</span></div>
+    </div>
+    <div class="contributions-controls" aria-label="Contribution filters">
+      <label class="contributions-control">Project<select id="contribution-project-filter"><option value="">All projects</option></select></label>
+      <label class="contributions-control">Status<select id="contribution-status-filter"><option value="">All statuses</option><option value="under_review">Under review</option><option value="maintainer_applied">Maintainer applied</option><option value="upstream">Upstream</option></select></label>
+      <span id="contribution-count" aria-live="polite"></span>
+    </div>
+    <div id="contributions-list" class="contributions-list" aria-live="polite"><p class="contributions-empty">Loading contribution feed…</p></div>
+  </div></main>
+  <script src="js/contributions.js"></script>
+  <script>
+    document.querySelector('.s-header__menu-toggle').addEventListener('click', function () { document.body.classList.toggle('menu-is-open'); this.classList.toggle('is-clicked'); });
+  </script>
+</body>
+</html>
