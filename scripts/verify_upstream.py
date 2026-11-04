@@ -6,6 +6,8 @@ import subprocess
 import urllib.error
 import urllib.parse
 import urllib.request
+import tempfile
+import os
 
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,20 +23,37 @@ REPOSITORIES = {
 
 
 def save_json(path, data):
-    path.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    temp_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=path.parent,
+            delete=False,
+        ) as temp_file:
+            json.dump(data, temp_file, indent=2, ensure_ascii=False)
+            temp_file.write("\n")
+            temp_path = Path(temp_file.name)
+
+        temp_path.replace(path)
+
+    finally:
+        if temp_path and temp_path.exists():
+            temp_path.unlink()
 
 
 def github_request(url):
-    request = urllib.request.Request(
-        url,
-        headers={
-            "Accept": "application/vnd.github+json",
-            "User-Agent": "contribution-feed-verifier",
-        },
-    )
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "contribution-feed-verifier",
+    }
+
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    request = urllib.request.Request(url, headers=headers)
 
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read()
