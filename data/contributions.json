@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T11:25:47.674356+00:00",
+  "generated_at": "2026-11-06T11:23:25.743573+00:00",
   "contribution_count": 9,
   "projects": [
     "Linux kernel",
@@ -48,17 +48,25 @@
       "subsystem": "remoteproc",
       "contribution_type": "PATCH",
       "source": "lore",
-      "status": "under_review",
+      "status": "maintainer_applied",
       "status_evidence": {
         "type": "lore_thread",
         "message_ids": [
-          "<20261031161131.1647-1-atul.akella@gmail.com>"
+          "<20261031161131.1647-1-atul.akella@gmail.com>",
+          "<auyxYDRg1QbIrKNo@p14s>"
         ],
-        "message_count": 1,
-        "application": null
+        "message_count": 2,
+        "application": {
+          "type": "lore_application_reply",
+          "message_id": "<auyxYDRg1QbIrKNo@p14s>",
+          "from": "Mathieu Poirier <mathieu.poirier@linaro.org>",
+          "date": "2026-11-05T16:40:00+00:00",
+          "url": "https://lore.kernel.org/all/auyxYDRg1QbIrKNo@p14s/",
+          "matched_text": "Applied."
+        }
       },
       "submitted_at": "2026-10-31T16:11:30+00:00",
-      "updated_at": null,
+      "updated_at": "2026-11-05T16:40:00+00:00",
       "merged_at": null,
       "url": "https://lore.kernel.org/all/20261031161131.1647-1-atul.akella@gmail.com/",
       "mailing_lists": [
@@ -155,7 +163,7 @@
         "upstream": {
           "type": "exact_patch_id_match",
           "repository": "torvalds/linux",
-          "verified_at": "2026-11-05T11:25:48.453089+00:00",
+          "verified_at": "2026-11-06T11:23:26.661598+00:00",
           "matched_patches": [
             {
               "message_id": "<20261013160055.1362-1-atul.akella@gmail.com>",
