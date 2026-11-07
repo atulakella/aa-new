@@ -1,12 +1,65 @@
 {
-  "generated_at": "2026-11-06T11:23:25.743573+00:00",
-  "contribution_count": 9,
+  "generated_at": "2026-11-07T10:37:03.933347+00:00",
+  "contribution_count": 10,
   "projects": [
     "Linux kernel",
     "OpenAMP",
     "U-Boot"
   ],
   "contributions": [
+    {
+      "id": "lore-20261106184312.100-1-atul.akella-gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "remoteproc: qcom: Fix DA-to-VA bounds checks",
+      "subsystem": "remoteproc",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "under_review",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<20261106184312.100-1-atul.akella@gmail.com>",
+          "<20261106184312.100-2-atul.akella@gmail.com>",
+          "<20261106184312.100-3-atul.akella@gmail.com>",
+          "<20261106184312.100-4-atul.akella@gmail.com>",
+          "<20261106184312.100-5-atul.akella@gmail.com>"
+        ],
+        "message_count": 5,
+        "application": null
+      },
+      "submitted_at": "2026-11-06T18:43:07+00:00",
+      "updated_at": null,
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/20261106184312.100-1-atul.akella@gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>",
+        "<stable.vger.kernel.org>"
+      ],
+      "thread_root": "<20261106184312.100-1-atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<20261106184312.100-2-atul.akella@gmail.com>",
+          "subject": "[PATCH 1/4] remoteproc: qcom: Fix bounds check in adsp_da_to_va()",
+          "patch_id": "2401023667a57b4cfa890770c9af72def2961141"
+        },
+        {
+          "message_id": "<20261106184312.100-3-atul.akella@gmail.com>",
+          "subject": "[PATCH 2/4] remoteproc: qcom: Fix bounds check in qcom_pas_da_to_va()",
+          "patch_id": "94da36c271993ae9708fdfbacb9500a656de5fbb"
+        },
+        {
+          "message_id": "<20261106184312.100-4-atul.akella@gmail.com>",
+          "subject": "[PATCH 3/4] remoteproc: qcom: Fix bounds check in q6v5_wcss_da_to_va()",
+          "patch_id": "71897a4f52e24441e2fe1a80bea7f7c8e6f3a870"
+        },
+        {
+          "message_id": "<20261106184312.100-5-atul.akella@gmail.com>",
+          "subject": "[PATCH 4/4] remoteproc: qcom: Fix bounds check in wcnss_da_to_va()",
+          "patch_id": "42331fcf62f963fab067b3fcf2f0339744e0e111"
+        }
+      ]
+    },
     {
       "id": "lore-20261103090022.1887-1-atul.akella-gmail.com",
       "project": "U-Boot",
@@ -163,7 +216,7 @@
         "upstream": {
           "type": "exact_patch_id_match",
           "repository": "torvalds/linux",
-          "verified_at": "2026-11-06T11:23:26.661598+00:00",
+          "verified_at": "2026-11-07T10:37:06.000469+00:00",
           "matched_patches": [
             {
               "message_id": "<20261013160055.1362-1-atul.akella@gmail.com>",
