@@ -1,0 +1,15 @@
+{
+  "d5691858e4ea522b088ee34137bf79de6f933baf": {
+    "repository": "torvalds/linux",
+    "commit": "7dd4cffdf4c2a496ccf783303a03d687a2127baf",
+    "url": "https://github.com/torvalds/linux/commit/7dd4cffdf4c2a496ccf783303a03d687a2127baf",
+    "patch_id": "d5691858e4ea522b088ee34137bf79de6f933baf"
+  },
+  "0053449ec714a230b6e1383975a06e3609fc8244": {
+    "repository": "u-boot/u-boot",
+    "commit": "f033daf7a6631e389d6500da89b94e24ecb698fe",
+    "url": "https://github.com/u-boot/u-boot/commit/f033daf7a6631e389d6500da89b94e24ecb698fe",
+    "patch_id": "0053449ec714a230b6e1383975a06e3609fc8244",
+    "commit_date": "2026-11-06T16:49:05.000-03:00"
+  }
+}

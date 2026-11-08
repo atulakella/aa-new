@@ -1,0 +1,53 @@
+name: Update Contribution Feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install Lore tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lei
+          command -v lei
+
+      - name: Update contribution feed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/update_feed.py
+
+      - name: Commit and push feed updates
+        run: |
+          git config user.name "The Lore Keeper[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/contributions.json data/upstream-cache.json
+
+          if ! git diff --cached --quiet; then
+            if git log -1 --pretty=%s | grep -qx "Update contribution feed"; then
+              git commit --amend --no-edit
+              git push --force-with-lease
+            else
+              git commit -m "Update contribution feed"
+              git push
+            fi
+          else
+            echo "No feed changes to commit."
+          fi
