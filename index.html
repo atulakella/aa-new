@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7YB4EEMD6K"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atul Akella</title>
+<meta name="description" content="Embedded Systems Engineer specialising in hardware-software co-design, FPGA, and drone tech." />
+<meta itemprop="name" content="Atul Akella" />
+<meta itemprop="description" content="Embedded systems engineer, hardware-software co-design, FPGA, drone tech." />
+<meta property="og:url" content="https://heyatul.xyz/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Atul Akella" />
+<meta property="og:description" content="Embedded systems engineer, hardware-software co-design, FPGA, drone tech." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Atul Akella" />
+<meta name="twitter:description" content="Embedded systems engineer, hardware-software co-design, FPGA, drone tech." />
+
+<script src="js/head.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+<link rel="icon" id="dynamic-favicon">
+<link rel="manifest" href="site.webmanifest">
+
+
+</head>
+
+<body id="top">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div id="loader" class="dots-fade">
+    <div></div><div></div><div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="s-header">
+  <div class="s-header__block">
+    <div class="s-header__logo">
+      <a class="logo" href="index.html">Atul<span>.</span></a>
+    </div>
+    <button class="s-header__menu-toggle" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="s-header__nav">
+    <ul class="s-header__menu-links">
+      <li class="current"><a class="smoothscroll" href="#intro">Home</a></li>
+      <li><a class="smoothscroll" href="#about">About</a></li>
+      <li><a class="smoothscroll" href="#experience">Experience</a></li>
+      <li><a class="smoothscroll" href="#projects">Projects</a></li>
+      <li><a class="smoothscroll" href="#Things">Achievements</a></li>
+      <li><a class="smoothscroll" href="#blog">Blog</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li class="nav-cta"><a class="smoothscroll" href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- ============================================================
+     INTRO / HERO , target-section for scrollspy
+     ============================================================ -->
+<section id="intro" class="s-intro target-section">
+
+  <!-- Animated circuit traces background -->
+  <div class="hero-circuit" aria-hidden="true">
+    <svg viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Main horizontal trace -->
+      <path class="circuit-path" d="M-20 200 L120 200 L120 320 L280 320 L280 200 L420 200 L420 380 L580 380" stroke="rgba(15,31,61,0.09)" stroke-width="1.5" fill="none"/>
+      <!-- Vertical branch -->
+      <path class="circuit-path-2" d="M120 200 L120 80 L260 80 L260 -20" stroke="rgba(15,31,61,0.07)" stroke-width="1.5" fill="none"/>
+      <!-- Lower trace -->
+      <path class="circuit-path-3" d="M-20 500 L80 500 L80 440 L200 440 L200 560 L380 560 L380 480 L500 480 L500 620 L620 620" stroke="rgba(15,31,61,0.06)" stroke-width="1" fill="none"/>
+      <!-- Short connector -->
+      <path class="circuit-path-2" d="M280 320 L280 460 L180 460 L180 560" stroke="rgba(15,31,61,0.05)" stroke-width="1" fill="none"/>
+      <!-- Diagonal accent -->
+      <path class="circuit-path-3" d="M420 200 L420 120 L520 120 L520 -20" stroke="rgba(184,115,51,0.08)" stroke-width="1.5" fill="none"/>
+
+      <!-- Nodes, copper dots at junctions -->
+      <g class="circuit-node" transform="translate(120,200)">
+        <circle r="4" fill="rgba(184,115,51,0.25)" stroke="rgba(184,115,51,0.5)" stroke-width="1"/>
+        <circle r="2" fill="rgba(184,115,51,0.6)"/>
+      </g>
+      <g class="circuit-node" transform="translate(280,320)">
+        <circle r="4" fill="rgba(184,115,51,0.2)" stroke="rgba(184,115,51,0.4)" stroke-width="1"/>
+        <circle r="2" fill="rgba(184,115,51,0.5)"/>
+      </g>
+      <g class="circuit-node" transform="translate(420,200)">
+        <circle r="4" fill="rgba(15,31,61,0.12)" stroke="rgba(15,31,61,0.2)" stroke-width="1"/>
+        <circle r="2" fill="rgba(15,31,61,0.3)"/>
+      </g>
+      <g class="circuit-node" transform="translate(260,80)">
+        <circle r="3" fill="rgba(184,115,51,0.18)" stroke="rgba(184,115,51,0.35)" stroke-width="1"/>
+        <circle r="1.5" fill="rgba(184,115,51,0.45)"/>
+      </g>
+      <g class="circuit-node" transform="translate(200,440)">
+        <circle r="3" fill="rgba(15,31,61,0.1)" stroke="rgba(15,31,61,0.18)" stroke-width="1"/>
+        <circle r="1.5" fill="rgba(15,31,61,0.25)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Left: text -->
+  <div class="container container--contents">
+    <div class="s-intro__content-text">
+      <!-- Laptop-only live "logic analyzer" readout, fills the upper negative space -->
+      <div class="hero-scope hero-anim hero-anim-1" aria-hidden="true">
+        <div class="hero-scope__head">
+          <span class="hero-scope__dot"></span>
+          <span class="hero-scope__id" id="scopeId">SCOPE&nbsp;·&nbsp;GPIO_0114</span>
+          <span class="hero-scope__hz">505&nbsp;Hz</span>
+        </div>
+        <svg class="hero-scope__svg" viewBox="0 0 240 64" preserveAspectRatio="none" role="presentation">
+          <g class="hero-scope__grid">
+            <line x1="0" y1="16" x2="240" y2="16"/>
+            <line x1="0" y1="32" x2="240" y2="32"/>
+            <line x1="0" y1="48" x2="240" y2="48"/>
+            <line x1="60" y1="0" x2="60" y2="64"/>
+            <line x1="120" y1="0" x2="120" y2="64"/>
+            <line x1="180" y1="0" x2="180" y2="64"/>
+          </g>
+          <path class="hero-scope__wave" id="scopeWave" d="M0 48 L0 16 L40 16 L40 48 L80 48 L80 16 L120 16 L120 48 L160 48 L160 16 L200 16 L200 48 L240 48"/>
+        </svg>
+      </div>
+
+      <p class="s-intro__content-pretitle hero-anim hero-anim-1">Open to Full-Time Roles · Graduating 2027</p>
+
+      <h1 class="s-intro__content-title hero-anim hero-anim-2">
+        I build things<br>
+        <span class="hero-typewriter">
+          <span class="hero-typewriter__sizer" aria-hidden="true">on tiny computers.</span>
+          <span class="hero-typewriter__live">
+            <em id="typewriterText" class="copper-flicker"></em><span class="type-cursor" aria-hidden="true"></span>
+          </span>
+        </span>
+      </h1>
+
+      <p class="s-intro__tagline hero-anim hero-anim-3">
+        Final-year Electronics and Communications Engineering student at VIT-AP, graduating 2027. I build embedded firmware, Linux drivers, and hardware accelerators. Most problems get interesting when you stop trusting the abstraction.
+      </p>
+
+      <div class="s-intro__content-btns hero-anim hero-anim-4">
+        <a class="smoothscroll btn btn--primary" href="#projects">View Projects</a>
+        <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+      </div>
+    </div>
+
+    <!-- Right: photo -->
+    <div class="s-intro__content-media hero-photo-anim">
+      <img src="images/about.webp"
+           srcset="images/about.webp 1x, images/about.webp 2x"
+           alt="Atul Akella">
+
+      <a class="hero-badge hero-badge-anim" href="lore.html" aria-label="Read the latest Lore contribution">
+        <div class="hero-badge__label">
+          <span class="hero-badge__pulse hero-badge__pulse--live" aria-hidden="true"></span>
+          Latest Lore
+        </div>
+        <div id="latest-contribution" class="hero-badge__role">Loading contribution feed…</div>
+        <span class="hero-badge__link">Read the contribution log →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="s-intro__scroll-down">
+    <a class="smoothscroll" href="#about">
+      <div class="scroll-arrow"></div>
+      <span>Scroll</span>
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="s-about target-section">
+
+  <div class="container">
+
+    <div class="section-eyebrow reveal">
+      <span class="section-num">01</span>
+      <span class="eyebrow-text">About Me</span>
+    </div>
+
+    <h2 class="section-heading reveal">
+      I go lower<br>until things make sense.
+    </h2>
+
+    <div class="about-grid">
+
+      <!-- LEFT: story -->
+      <div class="about-text reveal">
+        <p>
+          It started with a bluetooth robotic arm at 13. I didn't have a datasheet.
+          I didn't know datasheets existed. All I knew was I wanted to understand why it worked.
+        </p>
+        <p>
+          That question "why?" never left. It kept following me through every project.
+          And every time I thought I had the answer, I'd realize there was another layer worth understanding.
+        </p>
+        <p>
+          Now I enjoy working at the hardware-software boundary. 
+          I'm drawn to problems that reward understanding the system beneath the abstraction, 
+          whether that means debugging, designing, or building from the ground up.  
+        </p>
+        <p>
+          Outside of that I play a lot of chess, occasionally basketball, and spend more time than
+          I should listening to a song on repeat until I've figured out exactly what the lyrics are doing.
+        </p>
+      </div>
+
+      <!-- RIGHT: 1x4 skill baskets -->
+      <div class="about-skills-col reveal">
+        <div class="skills-section-label">Where I work</div>
+        <div class="skills-baskets">
+
+          <div class="skill-basket">
+            <div class="skill-basket__label">Firmware &amp; OS</div>
+            <div class="skill-basket__items">
+              <span class="skill-chip">Bare-metal C</span>
+              <span class="skill-chip">FreeRTOS</span>
+              <span class="skill-chip">OpenAMP</span>
+              <span class="skill-chip">RPMsg</span>
+              <span class="skill-chip">Embedded Linux</span>
+              <span class="skill-chip">ARM Cortex-M4 / A7</span>
+            </div>
+          </div>
+
+          <div class="skill-basket">
+            <div class="skill-basket__label">Hardware &amp; FPGA</div>
+            <div class="skill-basket__items">
+              <span class="skill-chip">Vitis HLS</span>
+              <span class="skill-chip">Vivado</span>
+              <span class="skill-chip">AXI4</span>
+              <span class="skill-chip">Zynq Z7-10</span>
+              <span class="skill-chip">Fixed-point arithmetic</span>
+              <span class="skill-chip">PS+PL co-design</span>
+            </div>
+          </div>
+
+          <div class="skill-basket">
+            <div class="skill-basket__label">Wireless &amp; Drones</div>
+            <div class="skill-basket__items">
+              <span class="skill-chip">ESP-NOW</span>
+              <span class="skill-chip">MAVLink</span>
+              <span class="skill-chip">CRSF</span>
+              <span class="skill-chip">iNav</span>
+              <span class="skill-chip">UART / SPI / I2C</span>
+            </div>
+          </div>
+
+          <div class="skill-basket">
+            <div class="skill-basket__label">ML at the Edge</div>
+            <div class="skill-basket__items">
+              <span class="skill-chip">TinyML</span>
+              <span class="skill-chip">YOLOv8</span>
+              <span class="skill-chip">DETR</span>
+              <span class="skill-chip">SAM</span>
+              <span class="skill-chip">On-device inference</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE
+     ============================================================ -->
+<section id="experience" class="target-section">
+  <div class="container">
+
+    <div class="section-eyebrow reveal">
+      <span class="section-num">02</span>
+      <span class="eyebrow-text">Experience</span>
+    </div>
+    <h2 class="section-heading reveal">
+      Where I've worked.
+    </h2>
+
+    <div class="exp-list">
+
+      <div class="exp-card reveal">
+        <div class="exp-card-header">
+          <div class="exp-year-mark">May – Jul 2025</div>
+        </div>
+        <div class="exp-place">NIT Rourkela | Rourkela, India</div>
+        <div class="exp-meta">
+          <span class="exp-tag">FSO | Optical Comms</span>
+          <span class="exp-tag">Hardware</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built a simplex FSO data link from scratch: custom UART framing with byte stuffing, NRZ encoding, and multi-protocol input bridging across I2C, UART, SPI, RJ45, and RS232 on a single transmitter node.</li>
+          <li>Achieved reliable text and image transmission over a free-space laser link. Signal recovery pipeline built directly on raw photodetector output with no off-the-shelf modem layer.</li>
+          <li>Designed the full-duplex extension path: link-layer ACK/NAK retransmission, framing protocol, and end-to-end testing over actual free-space propagation distance.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-header">
+          <div class="exp-year-mark">Sep 2023 – Dec 2024</div>
+        </div>
+        <div class="exp-place">ShrimpIQ | Remote</div>
+        <div class="exp-meta">
+          <span class="exp-tag">Edge ML | Computer Vision</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Benchmarked YOLOv8-nano, DETR, and SAM on aquaculture field data for shrimp defect detection. Achieved +6% mAP over the YOLOv8-nano baseline on real production images.</li>
+          <li>Optimized the classification pipeline for edge deployment: quantization, pruning, and operator fusion. Validated across ARM Cortex-A and MCU-class targets on real field data.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section id="projects" class="target-section">
+  <div class="container">
+
+    <div class="projects-intro">
+      <div class="projects-intro-text">
+        <div class="section-eyebrow reveal">
+          <span class="section-num">03</span>
+          <span class="eyebrow-text">Projects</span>
+        </div>
+        <h2 class="section-heading reveal">
+          Things I've built.
+        </h2>
+        <p class="reveal">Hardware, firmware, and ML. Sometimes all three at once.</p>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Real-Tim Shady -->
+      <div class="proj-card reveal realtim-card" id="real-tim-shady-card">
+          <img src="images/em.webp" alt="" class="eminem-easter-egg" id="eminem-easter-egg" aria-hidden="true">
+        <div class="proj-card-top">
+          <div class="proj-year">Jun 2026</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-name">Real-Tim Shady</div>
+          <p class="proj-desc">
+            A full SoC bring-up on the STM32MP157D, split across its two cores. The Cortex-M4 runs FreeRTOS with a 1kHz PID loop controlling a motor, and the Cortex-A7 runs a PREEMPT_RT Linux build from a custom Yocto BSP layer I wrote. The two cores talk over RPMsg with a custom kernel module. The whole stack boots and wires itself up automatically via systemd, no manual steps.
+          </p>
+          <div class="proj-metrics">
+            <span class="proj-metric">STM32MP157D</span>
+            <span class="proj-metric">Yocto BSP</span>
+            <span class="proj-metric">PREEMPT_RT Linux 6.6</span>
+            <span class="proj-metric">FreeRTOS 1kHz</span>
+            <span class="proj-metric">Custom kernel module</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <a href="https://github.com/atulakella/real-tim-shady" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- CNN Accelerator -->
+      <div class="proj-card reveal">
+        <div class="proj-card-top">
+          <div class="proj-year">Apr 2026</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-name">CNN Inference Accelerator</div>
+          <p class="proj-desc">
+            A custom convolution accelerator on a Zynq-7000, streaming data between the ARM cores (PS) and the FPGA fabric (PL) over AXI4. I wrote the HLS kernel for the convolution layer and tuned the dataflow and loop unrolling until it hit 1421 inferences/sec, 2.67x faster than the same workload running purely in software on the Cortex-A9, while using 5x fewer DSP48 blocks than an unoptimized HLS baseline.
+          </p>
+          <div class="proj-metrics">
+            <span class="proj-metric">Zynq-7000 FPGA</span>
+            <span class="proj-metric">2.67x speedup</span>
+            <span class="proj-metric">1421 inferences/sec</span>
+            <span class="proj-metric">5x fewer DSPs</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <a href="https://github.com/atulakella/zynq-cnn-accel" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- E-Nose -->
+      <div class="proj-card reveal">
+        <div class="proj-card-top">
+          <div class="proj-year">Sept 2024</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-name">Electronic Nose</div>
+          <p class="proj-desc">
+            Triggered by the Tirupati laddu adulteration controversy: could a small device tell the
+            difference between pure and adulterated ghee by smell alone, with no lab equipment?
+            Built a sensor array that reads the chemical signature of heated ghee, trained a tiny
+            classifier that fits on a microcontroller, and got to 86.6% accuracy running entirely on-device.
+          </p>
+          <div class="proj-metrics">
+            <span class="proj-metric">86.6% accuracy</span>
+            <span class="proj-metric">Runs on microcontroller</span>
+            <span class="proj-metric">15.8 KB flash</span>
+            <span class="proj-metric">1 ms inference</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <a href="https://github.com/atulakella/enose-ghee" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Tethered Drone -->
+      <div class="proj-card reveal">
+        <div class="proj-card-top">
+          <div class="proj-year">Mar 2026</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-name">Tethered Drone</div>
+          <p class="proj-desc">
+            A drone you control over a cable, for situations where radio links are unreliable or
+            battery life matters more than freedom of movement. I replaced the standard remote control
+            radio with a custom communication stack, built a flight dashboard with live telemetry,
+            and added a circuit to switch between tether power and battery mid-flight.
+            It flew.
+          </p>
+          <div class="proj-metrics">
+            <span class="proj-metric">Custom radio stack</span>
+            <span class="proj-metric">Live telemetry dashboard</span>
+            <span class="proj-metric">Mid-flight power switching</span>
+            <span class="proj-metric">iNav failsafe confirmed</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <a href="https://github.com/atulakella/recee-drone" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- VISU-NG -->
+      <div class="proj-card reveal">
+        <div class="proj-card-top">
+          <div class="proj-year">Dec 2024</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-name">VISU-NG - Humanoid Robot</div>
+          <p class="proj-desc">
+            My university's humanoid robot. It could hold a conversation, recognise faces and remember
+            who it had met before. Demonstrated to the HRD Minister of Andhra Pradesh at two public events. 
+          </p>
+          <div class="proj-metrics">
+            <span class="proj-metric">Voice interaction</span>
+            <span class="proj-metric">Face recognition</span>
+            <span class="proj-metric">Per-person memory</span>
+            <span class="proj-metric">Public demo</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <a href="https://github.com/atulakella" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- GitHub catch-all -->
+      <a href="https://github.com/atulakella" target="_blank" rel="noopener"
+         class="proj-card proj-card--github reveal">
+        <div class="proj-body">
+          <div class="proj-name">More on GitHub</div>
+          <p class="proj-desc">
+            Experiments, side projects, half-finished ideas, and things that didn't make this list.
+            The interesting stuff usually lives here first.
+          </p>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+            github.com/atulakella ↗
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ACHIEVEMENTS, wired to original timeline JS
+     ============================================================ -->
+<section id="Things" class="target-section">
+  <div class="container">
+
+    <div class="ach-section-head">
+      <div class="section-eyebrow reveal">
+        <span class="section-num">04</span>
+        <span class="eyebrow-text">Achievements</span>
+      </div>
+      <h2 class="section-heading reveal">A few things<br>worth noting.</h2>
+    </div>
+
+    <div class="achievement-scroll-note reveal" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <span class="achievement-scroll-arrow">→</span>
+    </div>
+
+    <div class="timeline-container reveal" id="timelineContainer">
+      <div class="cards" id="cards">
+
+        <div class="card">
+          <div class="card-age-badge">Age 13</div>
+          <h2>Built my first robot</h2>
+          <p>Bluetooth-controlled robotic arm, before I owned a multimeter or knew what a datasheet was. The start of everything.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-age-badge">Age 14</div>
+          <h2>IIT Kharagpur, top 30 of 3000+ teams</h2>
+          <p>Led my school team to the finals of the pan-Asia Young Innovators Program (YIP 2019). First time competing at that scale.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-age-badge">Age 15</div>
+          <h2>Built my first portfolio</h2>
+          <p>Designed and shipped a personal site with an interactive chatbot. First real full-stack project, and the reason this one exists.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-age-badge">Age 19</div>
+          <h2>Three hackathons, college freshman year</h2>
+          <p>National Hackathon 2024 (VIT-AP) and TinkerQuest '24 (IIT Roorkee × Redcliffe Labs), among others. Rapid iteration under pressure turned out to be a useful skill.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-age-badge">Age 20</div>
+          <h2>₹14L MSME Grant, Govt. of India</h2>
+          <p>Government innovation grant for CogniLift, a neurofeedback-based brain activity monitoring and therapy device. First time building something at the brain-computer interface, and the first time someone external put money behind the direction.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     ACHIEVEMENTS ALTERNATE CONCEPT
+     ============================================================ -->
+<!-- ============================================================
+     BLOG
+     ============================================================ -->
+<section id="blog" class="s-blog target-section">
+  <div class="container">
+
+    <div class="blog-intro">
+      <div class="section-eyebrow reveal">
+        <span class="section-num">05</span>
+        <span class="eyebrow-text">Blog</span>
+      </div>
+      <h2 class="section-heading reveal">Notes from the workbench.</h2>
+      <p class="reveal">Writeups on what broke, why, and how I fixed it. Embedded hardware and software.</p>
+    </div>
+
+    <!-- Add future posts as cards here. Keep each card linked directly to Medium. -->
+    <div class="blog-grid">
+      <a class="blog-card blog-card--featured reveal" href="https://medium.com/@atul.akella/i-committed-to-building-secure-hardware-into-a-final-year-project-heres-how-that-actually-went-fa16704f3c6c?sharedUserId=atul.akella" target="_blank" rel="noopener">
+        <div class="blog-card-cover"><img src="images/capstone.webp" alt="Cover image for the secure hardware final-year project article"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span>Article</span><span>Medium ↗</span></div>
+          <h3>I Committed to Building Secure Hardware into a Final-Year Project. Here's How That Actually Went.</h3>
+          <p>A few months ago, I came across a forum thread about MediaTek's mtk_uartboot, on routers built around the MT7988 SoC. Someone had managed to load a completely unsigned, self-built bootloader over UART...</p>
+          <span class="blog-card-link">Read the article <span aria-hidden="true">↗</span></span>
+        </div>
+      </a>
+      <a class="blog-card reveal" href="https://medium.com/@atul.akella/i-built-a-cnn-accelerator-on-zynq-7000-heres-everything-that-broke-4cc0f972530f" target="_blank" rel="noopener">
+        <div class="blog-card-cover"><img src="images/zynq.webp" alt="Cover image for the Zynq-7000 CNN accelerator article"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span>Article</span><span>Medium ↗</span></div>
+          <h3>I Built a CNN Accelerator on Zynq-7000. Here's Everything That Broke.</h3>
+          <p>I borrowed a Zybo Z7-10 from my university lab for another project. While I had it, I kept seeing YouTube videos and Reddit posts of people running neural networks on FPGAs at ridiculous speeds...</p>
+          <span class="blog-card-link">Read the article <span aria-hidden="true">↗</span></span>
+        </div>
+      </a>
+    </div>
+    <a class="blog-all-link reveal" href="https://medium.com/@atul.akella" target="_blank" rel="noopener">View all writing on Medium <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER / CONTACT
+     ============================================================ -->
+<footer id="footer" class="s-footer target-section">
+  <div class="container">
+
+    <div class="s-footer__header reveal">
+      <div class="section-eyebrow section-eyebrow--light">
+        <span class="section-num section-num--light">06</span>
+        <span class="eyebrow-text">Get In Touch</span>
+      </div>
+      <h2 class="footer-heading">
+        Let's build something<br><em>real.</em>
+      </h2>
+    </div>
+
+    <div class="s-footer__content reveal">
+
+      <div class="s-footer__about">
+        <p>
+
+If your hardware occasionally refuses to cooperate, there's a good chance we'll get along. Reach out if you think I'd be a good fit.
+        </p>
+        <div class="footer-links-label">Direct links</div>
+        <ul class="footer-link-list">
+          <li><a href="https://heyatul.xyz" target="_blank" rel="noopener">heyatul.xyz</a></li>
+          <li><a href="https://github.com/atulakella" target="_blank" rel="noopener">github.com/atulakella</a></li>
+          <li><a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener">linkedin.com/in/atulakella</a></li>
+          <li><a href="https://medium.com/@atul.akella/" target="_blank" rel="noopener">medium.com/@atul.akella</a></li>
+          <li><a href="mailto:ping@heyatul.xyz">ping@heyatul.xyz</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__site-links">
+        <div>
+          <h5 class="footer-links-label">Follow Me</h5>
+          <ul class="link-list">
+            <li><a href="https://github.com/atulakella/" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://medium.com/@atul.akella/" target="_blank" rel="noopener">Medium</a></li>
+            <li><a href="https://www.instagram.com/atul71_/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://x.com/AtulAkella" target="_blank" rel="noopener">X / Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-links-label">Contact</h5>
+          <ul class="link-list">
+            <li><a href="mailto:ping@heyatul.xyz">ping@heyatul.xyz</a></li>
+            <li><a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener">Message on LinkedIn</a></li>
+            <li><a href="https://heyatul.xyz" target="_blank" rel="noopener">heyatul.xyz</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="s-footer__buttons reveal">
+      <a href="https://www.linkedin.com/in/atulakella/" target="_blank" rel="noopener" class="btn btn--copper u-fullwidth">Message Me on LinkedIn</a>
+    </div>
+
+    <!-- Robot playground: a tiny companion wandering an organic clearing -->
+    <div id="robot-playground" aria-hidden="true">
+
+      <!-- organic, hand-shaped grass clearing -->
+      <svg class="rp-ground" width="260" height="190" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rpGrass" cx="46%" cy="40%" r="68%">
+            <stop offset="0%"   stop-color="#3c8748"/>
+            <stop offset="55%"  stop-color="#2c6636"/>
+            <stop offset="100%" stop-color="#1b4324"/>
+          </radialGradient>
+          <linearGradient id="rpRim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"   stop-color="#7a5418"/>
+            <stop offset="35%"  stop-color="#e8c060"/>
+            <stop offset="70%"  stop-color="#c8922a"/>
+            <stop offset="100%" stop-color="#7a5418"/>
+          </linearGradient>
+          <filter id="rpShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#08200f" flood-opacity="0.45"/>
+          </filter>
+          <clipPath id="rpClip"><use href="#rpBlob"/></clipPath>
+        </defs>
+
+        <!-- irregular, asymmetric outline -->
+        <g transform="scale(1.2) translate(0, 0)">
+        <path id="rpBlob" filter="url(#rpShadow)" fill="url(#rpGrass)"
+          d="M40,98 C16,72 30,32 72,24 C106,17 130,31 158,21
+             C198,7 240,30 232,74 C228,106 246,128 212,151
+             C186,170 150,159 116,165 C80,171 42,167 29,137
+             C21,120 26,110 40,98 Z"/>
+
+        <!-- blades of grass -->
+        <g clip-path="url(#rpClip)" stroke="#57a861" stroke-width="1.1" stroke-linecap="round" opacity="0.32">
+          <path d="M52 152 L58 126"/>
+          <path d="M74 159 L79 131"/>
+          <path d="M98 162 L102 133"/>
+          <path d="M124 163 L127 135"/>
+          <path d="M150 160 L153 132"/>
+          <path d="M176 155 L181 128"/>
+          <path d="M200 147 L206 122"/>
+          <path d="M66 98 L71 78"/>
+          <path d="M150 70 L154 52"/>
+          <path d="M198 96 L203 76"/>
+        </g>
+
+        <!-- soft shade pooling at the base -->
+        <ellipse clip-path="url(#rpClip)" cx="130" cy="174" rx="122" ry="28" fill="#0f2e1a" opacity="0.4"/>
+
+        <!-- worn earthy rim -->
+          <use href="#rpBlob" fill="none" stroke="url(#rpRim)" stroke-width="2.5" stroke-linejoin="round" opacity="0.8"/>      </svg>
+</g>
+      <!-- the robot -->
+      <div id="bot-wrap">
+        <div id="bot-bubble"><span id="bot-bubble-text"></span><i class="bot-bubble-tail"></i></div>
+
+        <svg id="bot-svg" width="73" height="78" viewBox="0 0 60 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="botBody" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#22406e"/>
+              <stop offset="100%" stop-color="#0e1d38"/>
+            </linearGradient>
+            <linearGradient id="botHead" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#2a4d80"/>
+              <stop offset="100%" stop-color="#12243f"/>
+            </linearGradient>
+            <radialGradient id="botEye" cx="50%" cy="40%" r="62%">
+              <stop offset="0%"   stop-color="#7af0df"/>
+              <stop offset="55%"  stop-color="#34d3c0"/>
+              <stop offset="100%" stop-color="#149a8b"/>
+            </radialGradient>
+          </defs>
+
+          <!-- contact shadow -->
+          <ellipse id="bot-shadow" cx="30" cy="61" rx="16" ry="3" fill="#06140b" opacity="0.4"/>
+
+          <g id="bot-body">
+            <!-- tracked base -->
+            <rect x="9" y="46" width="42" height="13" rx="6.5" fill="#0c1830" stroke="#a8771f" stroke-width="1.2"/>
+            <g fill="#c8922a" opacity="0.5">
+              <rect x="13" y="49" width="3" height="7" rx="1.5"/>
+              <rect x="19" y="49" width="3" height="7" rx="1.5"/>
+              <rect x="25" y="49" width="3" height="7" rx="1.5"/>
+              <rect x="31" y="49" width="3" height="7" rx="1.5"/>
+              <rect x="37" y="49" width="3" height="7" rx="1.5"/>
+              <rect x="43" y="49" width="3" height="7" rx="1.5"/>
+            </g>
+
+            <!-- torso -->
+            <rect x="15" y="30" width="30" height="20" rx="7" fill="url(#botBody)" stroke="#c8922a" stroke-width="1.3"/>
+            <rect x="20" y="36" width="11" height="3" rx="1.5" fill="#0a1830" stroke="#a8771f" stroke-width="0.6" opacity="0.8"/>
+            <rect x="20" y="41" width="11" height="3" rx="1.5" fill="#0a1830" stroke="#a8771f" stroke-width="0.6" opacity="0.8"/>
+            <circle cx="39" cy="40" r="2.4" fill="#0a1830" stroke="#c8922a" stroke-width="0.8"/>
+            <circle id="bot-led" cx="39" cy="40" r="1.2" fill="#e8c060"/>
+            <rect x="17.5" y="32" width="6" height="14" rx="3" fill="#ffffff" opacity="0.06"/>
+
+            <!-- neck -->
+            <rect x="26" y="26" width="8" height="6" rx="2" fill="#10203c" stroke="#a8771f" stroke-width="0.8"/>
+
+            <g id="bot-head">
+              <rect x="14" y="8" width="32" height="20" rx="9" fill="url(#botHead)" stroke="#c8922a" stroke-width="1.3"/>
+              <rect x="18" y="10.5" width="18" height="4" rx="2" fill="#ffffff" opacity="0.10"/>
+
+              <g id="bot-eyes">
+                <circle cx="24" cy="18" r="5.6" fill="#08243f" stroke="#a8771f" stroke-width="0.9"/>
+                <circle id="bot-pupil-l" cx="24" cy="18" r="3.1" fill="url(#botEye)"/>
+                <circle cx="22.6" cy="16.6" r="0.9" fill="#ffffff" opacity="0.85"/>
+                <circle cx="36" cy="18" r="5.6" fill="#08243f" stroke="#a8771f" stroke-width="0.9"/>
+                <circle id="bot-pupil-r" cx="36" cy="18" r="3.1" fill="url(#botEye)"/>
+                <circle cx="34.6" cy="16.6" r="0.9" fill="#ffffff" opacity="0.85"/>
+              </g>
+
+              <g id="bot-antenna">
+                <line x1="30" y1="8" x2="30" y2="2.5" stroke="#c8922a" stroke-width="1.3" stroke-linecap="round"/>
+                <circle cx="30" cy="2" r="1.7" fill="#e8c060"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="s-footer__bottom">
+      <p class="s-footer__copyright">© 2026 Atul Akella | Bangalore, India</p>
+
+      <ul class="s-footer__social">
+        <li>
+          <a href="mailto:ping@heyatul.xyz" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M22 6.4V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6.4l10 6.1 10-6.1zM4 4h16a2 2 0 0 1 2 2v.2L12 12.5 2 6.2V6a2 2 0 0 1 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/@atul.akella/" target="_blank" rel="noopener" aria-label="Medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.846 6.36c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.164.12-.246.331-.213.541v13.48c-.033.21.049.42.213.54l1.871 1.837v.403h-9.412v-.403l1.939-1.879c.19-.19.19-.246.19-.54v-10.91l-5.389 13.688h-.728l-6.27-13.688v9.153c-.052.386.076.774.347 1.052l2.521 3.06v.402H0v-.403l2.521-3.06c.27-.279.39-.67.325-1.052v-10.608z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/atulakella/" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.768.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.625-5.475 5.92.43.372.823 1.102.823 2.222v3.293c0 .322.216.694.824.576 4.765-1.588 8.201-6.083 8.201-11.385 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/atulakella/" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.75 18h-2.5v-9h2.5v9zm-1.25-10.268c-.789 0-1.25-.512-1.25-1.147 0-.641.471-1.145 1.272-1.145s1.25.504 1.272 1.145c0 .635-.483 1.147-1.272 1.147zm12.25 10.268h-2.5v-4.898c0-1.169-.022-2.676-1.629-2.676-1.63 0-1.879 1.274-1.879 2.594v4.98h-2.5v-9h2.403v1.234h.034c.334-.63 1.144-1.294 2.352-1.294 2.514 0 2.976 1.657 2.976 3.811v5.249z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/AtulAkella" aria-label="X / Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05 1.883 0 3.616-.636 5.001-1.721-1.771-.037-3.255-1.197-3.767-2.793.249.037.499.062.761.062.361 0 .724-.05 1.061-.137-1.847-.374-3.23-1.995-3.23-3.953v-.05c.537.299 1.16.486 1.82.511C3.534 9.419 2.823 8.184 2.823 6.787c0-.748.199-1.434.548-2.032 1.983 2.443 4.964 4.04 8.306 4.215-.062-.3-.1-.611-.1-.923 0-2.22 1.796-4.028 4.028-4.028 1.16 0 2.207.486 2.943 1.272.91-.175 1.782-.512 2.556-.973-.299.935-.936 1.721-1.771 2.22.811-.088 1.597-.312 2.319-.624C21.104 6.712 20.419 7.423 19.633 7.997z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/atul71_/" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="16.806" cy="7.207" r="1.078"/><path d="M20.533 6.111a4.438 4.438 0 0 0-2.633-2.632 6.957 6.957 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.955 6.955 0 0 0-2.186.419 4.438 4.438 0 0 0-2.633 2.633 6.957 6.957 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.438 4.438 0 0 0 2.634 2.632 6.957 6.957 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.957 6.957 0 0 0 2.186-.419 4.438 4.438 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.957 6.957 0 0 0-.419-2.186zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 5.049 5.049 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5.049 5.049 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.042 5.042 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.042 5.042 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.044 5.044 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055 2.437 0 2.687 0 3.654.055a5.044 5.044 0 0 1 1.67.311 2.985 2.985 0 0 1 1.712 1.712 5.044 5.044 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Back to top -->
+<a class="ss-go-top" href="#top" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</a>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<style>
+.realtim-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.eminem-easter-egg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:opacity 0.5s ease;
+    z-index:0;
+
+    image-rendering:auto;
+}
+
+.realtim-card > *:not(.eminem-easter-egg){
+    position:relative;
+    z-index:1;
+}
+</style>
+<script>
+  (function () {
+    var card = document.getElementById('real-tim-shady-card');
+    var img = document.getElementById('eminem-easter-egg');
+    var hasPlayed = false;
+
+    if (!card || !img) return;
+
+    card.addEventListener('mouseenter', function () {
+      if (hasPlayed) return;
+      hasPlayed = true;
+
+      img.style.opacity = '0.59';            // fade in (CSS transition handles the 1.1s)
+      setTimeout(function () {
+        img.style.opacity = '0';             // hold ~3s, then fade out
+      }, 500);
+    });
+  })();
+</script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+<script src="js/robot.js"></script>
+<script src="js/contributions.js"></script>
+</body>
+</html>
