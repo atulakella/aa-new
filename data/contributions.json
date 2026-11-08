@@ -1,0 +1,400 @@
+{
+  "generated_at": "2026-11-14T10:49:28.684595+00:00",
+  "contribution_count": 10,
+  "projects": [
+    "Linux kernel",
+    "OpenAMP",
+    "U-Boot"
+  ],
+  "contributions": [
+    {
+      "id": "lore-20261106184312.100-1-atul.akella-gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "remoteproc: qcom: Fix DA-to-VA bounds checks",
+      "subsystem": "remoteproc",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "under_review",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<20261106184312.100-1-atul.akella@gmail.com>",
+          "<20261106184312.100-2-atul.akella@gmail.com>",
+          "<20261106184312.100-3-atul.akella@gmail.com>",
+          "<20261106184312.100-4-atul.akella@gmail.com>",
+          "<20261106184312.100-5-atul.akella@gmail.com>"
+        ],
+        "message_count": 5,
+        "application": null
+      },
+      "submitted_at": "2026-11-06T18:43:07+00:00",
+      "updated_at": null,
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/20261106184312.100-1-atul.akella@gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>",
+        "<stable.vger.kernel.org>"
+      ],
+      "thread_root": "<20261106184312.100-1-atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<20261106184312.100-2-atul.akella@gmail.com>",
+          "subject": "[PATCH 1/4] remoteproc: qcom: Fix bounds check in adsp_da_to_va()",
+          "patch_id": "2401023667a57b4cfa890770c9af72def2961141"
+        },
+        {
+          "message_id": "<20261106184312.100-3-atul.akella@gmail.com>",
+          "subject": "[PATCH 2/4] remoteproc: qcom: Fix bounds check in qcom_pas_da_to_va()",
+          "patch_id": "94da36c271993ae9708fdfbacb9500a656de5fbb"
+        },
+        {
+          "message_id": "<20261106184312.100-4-atul.akella@gmail.com>",
+          "subject": "[PATCH 3/4] remoteproc: qcom: Fix bounds check in q6v5_wcss_da_to_va()",
+          "patch_id": "71897a4f52e24441e2fe1a80bea7f7c8e6f3a870"
+        },
+        {
+          "message_id": "<20261106184312.100-5-atul.akella@gmail.com>",
+          "subject": "[PATCH 4/4] remoteproc: qcom: Fix bounds check in wcnss_da_to_va()",
+          "patch_id": "42331fcf62f963fab067b3fcf2f0339744e0e111"
+        }
+      ]
+    },
+    {
+      "id": "lore-20261103090022.1887-1-atul.akella-gmail.com",
+      "project": "U-Boot",
+      "repository": null,
+      "title": "remoteproc: imx_rproc: make bounds check overflow-safe",
+      "subsystem": "remoteproc",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "upstream",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<20261103090022.1887-1-atul.akella@gmail.com>"
+        ],
+        "message_count": 1,
+        "application": null,
+        "upstream": {
+          "type": "exact_patch_id_match",
+          "repository": "u-boot/u-boot",
+          "verified_at": "2026-11-14T10:49:30.002282+00:00",
+          "matched_patches": [
+            {
+              "message_id": "<20261103090022.1887-1-atul.akella@gmail.com>",
+              "patch_id": "0053449ec714a230b6e1383975a06e3609fc8244",
+              "repository": "u-boot/u-boot",
+              "commit": "f033daf7a6631e389d6500da89b94e24ecb698fe",
+              "url": "https://github.com/u-boot/u-boot/commit/f033daf7a6631e389d6500da89b94e24ecb698fe",
+              "commit_date": "2026-11-06T16:49:05.000-03:00"
+            }
+          ]
+        }
+      },
+      "submitted_at": "2026-11-03T09:00:22+00:00",
+      "updated_at": "2026-11-06T16:49:05.000-03:00",
+      "merged_at": "2026-11-06T16:49:05.000-03:00",
+      "url": "https://lore.kernel.org/all/20261103090022.1887-1-atul.akella@gmail.com/",
+      "mailing_lists": [
+        "U-Boot discussion <u-boot.lists.u-boot-project.org>"
+      ],
+      "thread_root": "<20261103090022.1887-1-atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<20261103090022.1887-1-atul.akella@gmail.com>",
+          "subject": "[PATCH] remoteproc: imx_rproc: make bounds check overflow-safe",
+          "patch_id": "0053449ec714a230b6e1383975a06e3609fc8244"
+        }
+      ]
+    },
+    {
+      "id": "lore-20261031161131.1647-1-atul.akella-gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "remoteproc: core: fix integer overflow in rproc_da_to_va() bounds check",
+      "subsystem": "remoteproc",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "maintainer_applied",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<20261031161131.1647-1-atul.akella@gmail.com>",
+          "<auyxYDRg1QbIrKNo@p14s>"
+        ],
+        "message_count": 2,
+        "application": {
+          "type": "lore_application_reply",
+          "message_id": "<auyxYDRg1QbIrKNo@p14s>",
+          "from": "Mathieu Poirier <mathieu.poirier@linaro.org>",
+          "date": "2026-11-05T16:40:00+00:00",
+          "url": "https://lore.kernel.org/all/auyxYDRg1QbIrKNo@p14s/",
+          "matched_text": "Applied."
+        }
+      },
+      "submitted_at": "2026-10-31T16:11:30+00:00",
+      "updated_at": "2026-11-05T16:40:00+00:00",
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/20261031161131.1647-1-atul.akella@gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>"
+      ],
+      "thread_root": "<20261031161131.1647-1-atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<20261031161131.1647-1-atul.akella@gmail.com>",
+          "subject": "[PATCH] remoteproc: core: fix integer overflow in rproc_da_to_va() bounds check",
+          "patch_id": "3f9ca48316e31926566d34c2c801efc2f63af3d9"
+        }
+      ]
+    },
+    {
+      "id": "lore-CAKGVfCBR_syQ2hVpa8hn124opab=V3aYmwqtC4AE2GghfL+eUw-mail.gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "rpmsg: virtio: reclaim TX buffer after enqueue failure",
+      "subsystem": "rpmsg",
+      "contribution_type": "RFC",
+      "source": "lore",
+      "status": "under_review",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<CAKGVfCBR_syQ2hVpa8hn124opab=V3aYmwqtC4AE2GghfL+eUw@mail.gmail.com>"
+        ],
+        "message_count": 1,
+        "application": null
+      },
+      "submitted_at": "2026-10-29T19:01:06+00:00",
+      "updated_at": null,
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/CAKGVfCBR_syQ2hVpa8hn124opab=V3aYmwqtC4AE2GghfL+eUw@mail.gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>"
+      ],
+      "thread_root": "<CAKGVfCBR_syQ2hVpa8hn124opab=V3aYmwqtC4AE2GghfL+eUw@mail.gmail.com>",
+      "patches": []
+    },
+    {
+      "id": "OpenAMP-open-amp-pr-712",
+      "project": "OpenAMP",
+      "repository": "OpenAMP/open-amp",
+      "title": "virtio_mmio: fix config read offset",
+      "subsystem": null,
+      "contribution_type": "PULL_REQUEST",
+      "source": "github",
+      "status": "upstream",
+      "status_evidence": {
+        "type": "github_pull_request",
+        "pr_number": 712,
+        "state": "closed",
+        "merged_at": "2026-11-03T13:46:29Z",
+        "merge_commit_sha": "3cfbaa0b311a3486ce9ca5835f9bd56e12a64218"
+      },
+      "submitted_at": "2026-10-22T08:11:18Z",
+      "updated_at": "2026-11-03T13:46:29Z",
+      "merged_at": "2026-11-03T13:46:29Z",
+      "url": "https://github.com/OpenAMP/open-amp/pull/712",
+      "pull_request": {
+        "number": 712,
+        "labels": [],
+        "base_branch": "main",
+        "head_sha": "0f2ccbc806dafba033daf43840484fd611be0e97",
+        "merge_commit_sha": "3cfbaa0b311a3486ce9ca5835f9bd56e12a64218"
+      }
+    },
+    {
+      "id": "lore-20261013160055.1362-1-atul.akella-gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "rpmsg: virtio: fix error handling in TX buffer wait",
+      "subsystem": "rpmsg",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "upstream",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<20261013160055.1362-1-atul.akella@gmail.com>",
+          "<as-kgAyy2oBVP3jr@p14s>"
+        ],
+        "message_count": 2,
+        "application": {
+          "type": "lore_application_reply",
+          "message_id": "<as-kgAyy2oBVP3jr@p14s>",
+          "from": "Mathieu Poirier <mathieu.poirier@linaro.org>",
+          "date": "2026-10-14T15:49:20+00:00",
+          "url": "https://lore.kernel.org/all/as-kgAyy2oBVP3jr@p14s/",
+          "matched_text": "Applied."
+        },
+        "upstream": {
+          "type": "exact_patch_id_match",
+          "repository": "torvalds/linux",
+          "verified_at": "2026-11-14T10:49:30.311236+00:00",
+          "matched_patches": [
+            {
+              "message_id": "<20261013160055.1362-1-atul.akella@gmail.com>",
+              "patch_id": "d5691858e4ea522b088ee34137bf79de6f933baf",
+              "repository": "torvalds/linux",
+              "commit": "7dd4cffdf4c2a496ccf783303a03d687a2127baf",
+              "url": "https://github.com/torvalds/linux/commit/7dd4cffdf4c2a496ccf783303a03d687a2127baf"
+            }
+          ]
+        }
+      },
+      "submitted_at": "2026-10-13T16:00:55+00:00",
+      "updated_at": "2026-10-14T15:49:20+00:00",
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/20261013160055.1362-1-atul.akella@gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>"
+      ],
+      "thread_root": "<20261013160055.1362-1-atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<20261013160055.1362-1-atul.akella@gmail.com>",
+          "subject": "[PATCH] rpmsg: virtio: fix error handling in TX buffer wait",
+          "patch_id": "d5691858e4ea522b088ee34137bf79de6f933baf"
+        }
+      ]
+    },
+    {
+      "id": "OpenAMP-open-amp-pr-706",
+      "project": "OpenAMP",
+      "repository": "OpenAMP/open-amp",
+      "title": "rpmsg: virtio: Check TX buffer length in get_tx_payload_buffer",
+      "subsystem": null,
+      "contribution_type": "PULL_REQUEST",
+      "source": "github",
+      "status": "under_review",
+      "status_evidence": {
+        "type": "github_pull_request",
+        "pr_number": 706,
+        "state": "open",
+        "merged_at": null,
+        "merge_commit_sha": "eecf5bee834299f1c7cab3f2989be0859df9ba2d"
+      },
+      "submitted_at": "2026-10-06T09:13:15Z",
+      "updated_at": "2026-10-14T07:10:10Z",
+      "merged_at": null,
+      "url": "https://github.com/OpenAMP/open-amp/pull/706",
+      "pull_request": {
+        "number": 706,
+        "labels": [],
+        "base_branch": "main",
+        "head_sha": "59b0c689152257d9c18f0ce99527e3d66a05d5b9",
+        "merge_commit_sha": "eecf5bee834299f1c7cab3f2989be0859df9ba2d"
+      }
+    },
+    {
+      "id": "lore-cover.1791198233.git.atul.akella-gmail.com",
+      "project": "Linux kernel",
+      "repository": null,
+      "title": "remoteproc: mtk_scp: Fix bounds checks in da_to_va callbacks",
+      "subsystem": "remoteproc",
+      "contribution_type": "PATCH",
+      "source": "lore",
+      "status": "maintainer_applied",
+      "status_evidence": {
+        "type": "lore_thread",
+        "message_ids": [
+          "<cover.1791198233.git.atul.akella@gmail.com>",
+          "<2e32034b79ea7cad99b7ea9edfb8b2ad64f5096b.1791198233.git.atul.akella@gmail.com>",
+          "<bc3f565d08f6948aed9172c01c7c38b4cafa2ec1.1791198233.git.atul.akella@gmail.com>",
+          "<20261015151938.1331-1-atul.akella@gmail.com>",
+          "<atI5VLH_CiIBu0tq@p14s>",
+          "<atI6NxHI6zgTb3-s@p14s>",
+          "<atjsSS1_dA7nhXmD@p14s>",
+          "<aujHSnaooQ3QPTor@p14s>"
+        ],
+        "message_count": 8,
+        "application": {
+          "type": "lore_application_reply",
+          "message_id": "<aujHSnaooQ3QPTor@p14s>",
+          "from": "Mathieu Poirier <mathieu.poirier@linaro.org>",
+          "date": "2026-11-02T17:24:26+00:00",
+          "url": "https://lore.kernel.org/all/aujHSnaooQ3QPTor@p14s/",
+          "matched_text": "Applied."
+        }
+      },
+      "submitted_at": "2026-10-05T11:25:16+00:00",
+      "updated_at": "2026-11-02T17:24:26+00:00",
+      "merged_at": null,
+      "url": "https://lore.kernel.org/all/cover.1791198233.git.atul.akella@gmail.com/",
+      "mailing_lists": [
+        "<linux-remoteproc.vger.kernel.org>",
+        "<stable.vger.kernel.org>"
+      ],
+      "thread_root": "<cover.1791198233.git.atul.akella@gmail.com>",
+      "patches": [
+        {
+          "message_id": "<2e32034b79ea7cad99b7ea9edfb8b2ad64f5096b.1791198233.git.atul.akella@gmail.com>",
+          "subject": "[PATCH 1/2] remoteproc: mtk_scp: Fix bounds check in mt8183_scp_da_to_va()",
+          "patch_id": "8966c12945ac8b1b9770e7b9dcccc9987e2c8983"
+        },
+        {
+          "message_id": "<bc3f565d08f6948aed9172c01c7c38b4cafa2ec1.1791198233.git.atul.akella@gmail.com>",
+          "subject": "[PATCH 2/2] remoteproc: mtk_scp: Fix bounds check in mt8192_scp_da_to_va()",
+          "patch_id": "b07d29ad70165034e5410809dee4d2bc4c7cc151"
+        }
+      ]
+    },
+    {
+      "id": "OpenAMP-open-amp-pr-705",
+      "project": "OpenAMP",
+      "repository": "OpenAMP/open-amp",
+      "title": "remoteproc_virtio: guard null notify and check return status",
+      "subsystem": null,
+      "contribution_type": "PULL_REQUEST",
+      "source": "github",
+      "status": "upstream",
+      "status_evidence": {
+        "type": "github_pull_request",
+        "pr_number": 705,
+        "state": "closed",
+        "merged_at": "2026-09-28T08:33:45Z",
+        "merge_commit_sha": "a0ec4fc2c764dd8927cafbd751637a29eb6bd761"
+      },
+      "submitted_at": "2026-09-18T10:00:08Z",
+      "updated_at": "2026-10-06T07:02:38Z",
+      "merged_at": "2026-09-28T08:33:45Z",
+      "url": "https://github.com/OpenAMP/open-amp/pull/705",
+      "pull_request": {
+        "number": 705,
+        "labels": [],
+        "base_branch": "main",
+        "head_sha": "f82660fff3083dfc67fc1605d0496ea611ee8442",
+        "merge_commit_sha": "a0ec4fc2c764dd8927cafbd751637a29eb6bd761"
+      }
+    },
+    {
+      "id": "OpenAMP-open-amp-pr-695",
+      "project": "OpenAMP",
+      "repository": "OpenAMP/open-amp",
+      "title": "docs: clarify release_cb initialization requirement",
+      "subsystem": null,
+      "contribution_type": "PULL_REQUEST",
+      "source": "github",
+      "status": "upstream",
+      "status_evidence": {
+        "type": "github_pull_request",
+        "pr_number": 695,
+        "state": "closed",
+        "merged_at": "2026-09-10T08:28:15Z",
+        "merge_commit_sha": "1e2cae3a2edccfe5a50c255bc2f078e7cae148d8"
+      },
+      "submitted_at": "2026-08-03T16:43:02Z",
+      "updated_at": "2026-10-06T07:02:12Z",
+      "merged_at": "2026-09-10T08:28:15Z",
+      "url": "https://github.com/OpenAMP/open-amp/pull/695",
+      "pull_request": {
+        "number": 695,
+        "labels": [],
+        "base_branch": "main",
+        "head_sha": "2b640446750cbd6cd6ec8f166ca8d3c8b5b8fcfb",
+        "merge_commit_sha": "1e2cae3a2edccfe5a50c255bc2f078e7cae148d8"
+      }
+    }
+  ]
+}
